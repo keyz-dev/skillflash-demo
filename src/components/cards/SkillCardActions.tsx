@@ -1,40 +1,26 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark as faBookmarkRegular } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBookmark as faBookmarkRegular,
+  faCircle as faCircleRegular,
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faBookmark as faBookmarkSolid,
-  faCheck,
-  faPlus,
+  faCircle as faCircleSolid,
   faShareNodes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-const actionButtonClass =
-  "flex size-9 items-center justify-center rounded-full bg-neutral-white text-primary-lila shadow-card transition-[background-color,color,transform] duration-200 hover:scale-105 hover:bg-primary-lila hover:text-neutral-white focus-visible:outline-2 focus-visible:outline-primary-blue";
+const actionButtonBaseClass =
+  "flex size-9 cursor-pointer items-center justify-center rounded-full bg-neutral-white shadow-card transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue";
 
-export function SkillCardActions({ href }: { href: string }) {
+export function SkillCardActions() {
   const t = useTranslations("categories.actions");
   const [selected, setSelected] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [copied, setCopied] = useState(false);
-  async function shareCard() {
-    const url = new URL(href, window.location.origin).toString();
-
-    try {
-      if (navigator.share) {
-        await navigator.share({ url });
-        return;
-      }
-
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-    } catch {
-      setCopied(false);
-    }
-  }
 
   return (
     <div
@@ -46,27 +32,44 @@ export function SkillCardActions({ href }: { href: string }) {
         type="button"
         aria-label={selected ? t("remove") : t("add")}
         aria-pressed={selected}
-        className={cn(
-          actionButtonClass,
-          selected && "bg-primary-lila text-neutral-white",
-        )}
+        className={actionButtonBaseClass}
         onClick={() => setSelected((value) => !value)}
       >
-        <FontAwesomeIcon
-          icon={selected ? faCheck : faPlus}
-          aria-hidden="true"
-          className="size-4"
-        />
+        <span
+          className={cn(
+            "relative inline-flex size-8 items-center justify-center",
+            selected ? "text-neutral-white" : "text-primary-lila",
+          )}
+        >
+          <FontAwesomeIcon
+            icon={selected ? faCircleSolid : faCircleRegular}
+            aria-hidden="true"
+            className={cn(
+              "size-8",
+              selected ? "text-primary-lila" : "text-primary-lila",
+            )}
+          />
+          <span
+            aria-hidden="true"
+            className={cn(
+              "absolute flex size-2 items-center justify-center",
+              selected ? "text-neutral-white" : "text-primary-lila",
+            )}
+          >
+            <span className="absolute h-0.5 w-full rounded-full bg-current" />
+            <span className="absolute h-full w-0.5 rounded-full bg-current" />
+          </span>
+        </span>
       </button>
       <button
         type="button"
-        aria-label={copied ? t("copied") : t("share")}
-        title={copied ? t("copied") : t("share")}
-        className={actionButtonClass}
-        onClick={() => void shareCard()}
+        aria-label={t("share")}
+        title={t("share")}
+        className={cn(actionButtonBaseClass, "text-primary-lila")}
+        onClick={() => console.info("Share action is not implemented yet.")}
       >
         <FontAwesomeIcon
-          icon={copied ? faCheck : faShareNodes}
+          icon={faShareNodes}
           aria-hidden="true"
           className="size-4"
         />
@@ -76,8 +79,10 @@ export function SkillCardActions({ href }: { href: string }) {
         aria-label={saved ? t("unsave") : t("save")}
         aria-pressed={saved}
         className={cn(
-          actionButtonClass,
-          saved && "bg-primary-lila text-neutral-white",
+          actionButtonBaseClass,
+          saved
+            ? "bg-secondary-pink text-neutral-white"
+            : "text-secondary-pink",
         )}
         onClick={() => setSaved((value) => !value)}
       >

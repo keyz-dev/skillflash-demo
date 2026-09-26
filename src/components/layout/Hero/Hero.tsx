@@ -30,7 +30,7 @@ export function Hero() {
   }, [setScrolled]);
 
   return (
-    <section className="relative isolate z-30 min-h-[34rem] md:min-h-[40rem]">
+    <section className="relative min-h-[34rem] md:min-h-[40rem]">
       <HeroBackground />
       <div
         ref={sentinelRef}
@@ -38,7 +38,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto flex flex-col items-center px-4 pb-24 pt-28 text-center md:px-8 md:pt-48">
+      <div className="relative mx-auto flex flex-col items-center px-4 pb-24 pt-28 text-center md:px-8 md:pt-48">
         <div className="flex w-full flex-col items-center">
           <h1 className="font-heading text-h6 text-neutral-white md:text-h1">
             {t("headline")}

@@ -16,9 +16,7 @@ export function SkillCard({
 }) {
   return (
     <article className="group/card relative z-0 h-[404px] w-full max-w-[304px] hover:z-10 focus-within:z-10">
-      <div
-        className="relative flex h-full w-full flex-col overflow-hidden rounded-card bg-background shadow-card transition-[transform,box-shadow] duration-200 ease-out group-hover/card:-translate-y-0.5 group-hover/card:shadow-card-hover group-focus-within/card:-translate-y-0.5 group-focus-within/card:shadow-card-hover motion-reduce:transition-none"
-      >
+      <div className="relative flex h-full w-full flex-col overflow-hidden rounded-card bg-background shadow-card transition-[transform,box-shadow] duration-200 ease-out group-hover/card:-translate-y-0.5 group-hover/card:shadow-card-hover group-focus-within/card:-translate-y-0.5 group-focus-within/card:shadow-card-hover motion-reduce:transition-none">
         <div className="relative h-[204px] shrink-0">
           <Image
             src={card.imageUrl}
@@ -31,10 +29,10 @@ export function SkillCard({
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-card-fade"
           />
-          <span className="absolute bottom-0 left-4 z-10 rounded-full bg-neutral-black px-4 py-2 font-body text-p text-neutral-white shadow-card">
+          <span className="absolute bottom-0 left-4 z-10 cursor-pointer rounded-full bg-neutral-black px-4 py-2 font-body text-p text-neutral-white shadow-card transition-colors duration-200 hover:bg-neutral-black/80">
             {categoryLabel}
           </span>
-          <SkillCardActions href={card.href} />
+          <SkillCardActions />
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col px-4 pt-8">
@@ -54,7 +52,7 @@ export function SkillCard({
             {card.skillTags.slice(0, 2).map((tag) => (
               <li
                 key={tag}
-                className="shrink-0 rounded-full border-2 border-neutral-black bg-background px-3 py-1 font-body text-p text-foreground shadow-card"
+                className="shrink-0 cursor-pointer rounded-full border-2 border-neutral-black bg-background px-3 py-1 font-body text-p text-foreground shadow-card transition-colors duration-200 hover:bg-neutral-grey/40"
               >
                 {tag}
               </li>
