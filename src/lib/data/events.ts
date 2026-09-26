@@ -1,1 +1,84 @@
-export {};
+import type { Event } from "@/lib/types";
+
+export const events: Event[] = [
+  {
+    id: 1,
+    authorId: "lena-hoffmann",
+    name: "Speaking about Transformation",
+    startDate: "2026-10-14",
+    endDate: "2026-10-14",
+    startTime: "09:00",
+    endTime: "17:00",
+    location: {
+      type: "offline",
+      address: "Impact Hub Berlin, Rollbergstraße 28a, 12053 Berlin",
+    },
+    mainSkillIds: ["projektmanagement"],
+    description:
+      "Ein Praxistag zu Steuerung, Stakeholder-Klarheit und Entscheidungen in Transformationsprogrammen.",
+    ticketPrice: 189,
+    minGuests: 12,
+    maxGuests: 40,
+    previewImage: "https://picsum.photos/seed/event-transformation/400/400",
+  },
+  {
+    id: 2,
+    authorId: "jonas-weber",
+    name: "Agile Coaching Lab",
+    startDate: "2026-11-05",
+    endDate: "2026-11-06",
+    startTime: "10:00",
+    endTime: "16:00",
+    location: {
+      type: "online",
+      link: "https://meet.skillflash.de/agile-coaching-lab",
+    },
+    mainSkillIds: ["agile-coaching"],
+    description:
+      "Zwei halbe Tage mit Live-Coaching, Fallarbeit und Ritualen für Product Owner und Scrum Master.",
+    ticketPrice: 149,
+    minGuests: 8,
+    maxGuests: 30,
+    previewImage: "https://picsum.photos/seed/event-agile-lab/400/400",
+  },
+  {
+    id: 3,
+    authorId: "mira-khalil",
+    name: "Design Thinking Intensive",
+    startDate: "2026-11-21",
+    endDate: "2026-11-21",
+    startTime: "09:30",
+    endTime: "18:00",
+    location: {
+      type: "offline",
+      address: "Design Offices Hamburg, Domstraße 10, 20095 Hamburg",
+    },
+    mainSkillIds: ["design-thinking"],
+    description:
+      "Vom Problemraum zum getesteten Prototyp — ein kompakter Workshop für gemischte Produktteams.",
+    ticketPrice: 219,
+    minGuests: 10,
+    maxGuests: 24,
+    previewImage: "https://picsum.photos/seed/event-design-thinking/400/400",
+  },
+  {
+    id: 4,
+    authorId: "tobias-brandt",
+    name: "UX Systems Day",
+    startDate: "2026-12-03",
+    endDate: "2026-12-03",
+    startTime: "13:00",
+    endTime: "18:00",
+    location: {
+      type: "online",
+      link: "https://meet.skillflash.de/ux-systems-day",
+    },
+    mainSkillIds: ["ux-ui-design"],
+    description:
+      "Nachmittag zu Design Systemen, Entscheidungsarchitektur und Zusammenarbeit zwischen Design und Engineering.",
+    ticketPrice: 99,
+    minGuests: 15,
+    maxGuests: 80,
+    previewImage: "https://picsum.photos/seed/event-ux-systems/400/400",
+  },
+];
