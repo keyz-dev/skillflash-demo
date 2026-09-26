@@ -51,9 +51,23 @@
     "showMore": "Mehr anzeigen",
     "imageAlt": "Illustration zum Skill {skill}",
     "projektmanagement": "Projektmanagement",
+    "frontendDevelopment": "Frontend Development",
+    "graphicDesign": "Grafik Design",
+    "training": "Training",
+    "foreignLanguage": "Fremdsprache",
+    "drawing": "Zeichnen",
+    "leadership": "Führung",
     "agileCoaching": "Agile Coaching",
     "designThinking": "Design Thinking",
-    "uxUiDesign": "UX/UI Design"
+    "uxUiDesign": "UX/UI Design",
+    "actions": {
+      "add": "Zur Auswahl hinzufügen",
+      "remove": "Auswahl aufheben",
+      "save": "Karte speichern",
+      "unsave": "Gespeicherte Karte entfernen",
+      "share": "Karte teilen",
+      "copied": "Link kopiert"
+    }
   },
   "comingSoon": {
     "status": "In Kürze verfügbar",

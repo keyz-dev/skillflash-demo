@@ -41,6 +41,7 @@
   --text-p--font-weight: 700;
 
   --shadow-card: 0 4px 10px 0 rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 8px 16px 0 rgb(0 0 0 / 0.14);
 
   --radius-card: 6px;
   --radius-control: 6px;
@@ -56,6 +57,12 @@
     90deg,
     #ff006e 0%,
     #fb5607 100%
+  );
+
+  --background-image-card-fade: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0) 42%,
+    var(--color-background) 100%
   );
 }
 

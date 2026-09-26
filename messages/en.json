@@ -51,9 +51,23 @@
     "showMore": "Show more",
     "imageAlt": "Illustration for the {skill} skill",
     "projektmanagement": "Project management",
+    "frontendDevelopment": "Frontend development",
+    "graphicDesign": "Graphic design",
+    "training": "Training",
+    "foreignLanguage": "Foreign language",
+    "drawing": "Drawing",
+    "leadership": "Leadership",
     "agileCoaching": "Agile coaching",
     "designThinking": "Design thinking",
-    "uxUiDesign": "UX/UI design"
+    "uxUiDesign": "UX/UI design",
+    "actions": {
+      "add": "Add to selection",
+      "remove": "Remove from selection",
+      "save": "Save card",
+      "unsave": "Remove saved card",
+      "share": "Share card",
+      "copied": "Link copied"
+    }
   },
   "comingSoon": {
     "status": "Coming soon",
