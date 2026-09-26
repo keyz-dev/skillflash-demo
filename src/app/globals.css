@@ -15,6 +15,7 @@
   --color-surface: #f7f6fa;
   --color-border: #b7b7b7;
   --color-muted: #6b6b6b;
+  --color-header-glass: rgb(255 255 255 / 0.1);
 
   --font-heading: "Source Sans Pro", sans-serif;
   --font-body: "Quicksand", sans-serif;
@@ -42,12 +43,19 @@
   --shadow-card: 0 4px 10px 0 rgb(0 0 0 / 0.1);
 
   --radius-card: 6px;
+  --radius-control: 6px;
 
   --background-image-hero-radial: radial-gradient(
     circle at top left,
     #ffbe0b 0%,
     #ff006e 50%,
     #8338ec 100%
+  );
+
+  --background-image-secondary-fade: linear-gradient(
+    90deg,
+    #ff006e 0%,
+    #fb5607 100%
   );
 }
 
@@ -59,4 +67,12 @@
   --color-surface: #221532;
   --color-border: #3d2c54;
   --color-muted: #a79bc2;
+}
+
+@utility text-gradient-fade {
+  background-image: var(--background-image-secondary-fade);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: var(--text-body-input--font-weight);
 }

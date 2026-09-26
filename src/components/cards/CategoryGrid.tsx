@@ -25,16 +25,17 @@ const CATEGORY_SKILLS = [
 
 export async function CategoryGrid() {
   const t = await getTranslations("categories");
+  const displayedSkills = [...CATEGORY_SKILLS, ...CATEGORY_SKILLS];
 
   return (
-    <section className="relative z-20 mx-auto -mt-16 grid w-full max-w-6xl grid-cols-1 gap-6 px-4 pb-16 sm:grid-cols-2 md:-mt-24 lg:grid-cols-4 md:px-8">
-      {CATEGORY_SKILLS.map((skill) => {
+    <section className="relative z-20 mx-auto -mt-20 grid w-full max-w-6xl grid-cols-1 gap-6 px-4 pb-16 sm:grid-cols-2 lg:grid-cols-4 md:px-8 border-4">
+      {displayedSkills.map((skill, index) => {
         const article = articles.find((item) => item.skills.includes(skill.id));
         const name = t(skill.nameKey);
 
         return (
           <article
-            key={skill.id}
+            key={`${skill.id}-${index}`}
             className="overflow-hidden rounded-card bg-surface shadow-card"
           >
             <div className="relative aspect-[4/3]">

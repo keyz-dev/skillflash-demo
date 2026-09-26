@@ -54,5 +54,25 @@
     "agileCoaching": "Agile coaching",
     "designThinking": "Design thinking",
     "uxUiDesign": "UX/UI design"
+  },
+  "comingSoon": {
+    "status": "Coming soon",
+    "backHome": "Back to Skillflash",
+    "experts": {
+      "eyebrow": "For independent experts",
+      "title": "A brighter stage for what you know.",
+      "description": "We’re building a place for independent experts to share practical skills, host experiences, and meet people ready to learn.",
+      "visualLabel": "Knowledge worth sharing",
+      "switchText": "Building a team learning program?",
+      "switchLabel": "Explore enterprise"
+    },
+    "enterprise": {
+      "eyebrow": "For teams and organizations",
+      "title": "Bring practical expertise to your team.",
+      "description": "We’re preparing a simpler way to find trusted experts, learning sessions, and relevant skills for the people building your organization.",
+      "visualLabel": "Learning that moves teams forward",
+      "switchText": "Sharing your expertise?",
+      "switchLabel": "Explore expert opportunities"
+    }
   }
 }

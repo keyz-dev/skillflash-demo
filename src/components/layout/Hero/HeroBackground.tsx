@@ -4,21 +4,13 @@ import Image from "next/image";
 
 export function HeroBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-hero-radial">
+    <div className="absolute inset-0 overflow-hidden md:-translate-y-20">
       <Image
         src="/assets/images/hero/hero-vector.png"
         alt=""
         fill
         priority
-        className="object-cover object-top"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40 mix-blend-soft-light"
-        style={{
-          backgroundImage: "url('/assets/images/hero/dot-pattern.png')",
-          backgroundRepeat: "repeat",
-        }}
-        aria-hidden
+        className="object-fit object-top md:-translate-y-10"
       />
     </div>
   );

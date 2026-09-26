@@ -54,5 +54,25 @@
     "agileCoaching": "Agile Coaching",
     "designThinking": "Design Thinking",
     "uxUiDesign": "UX/UI Design"
+  },
+  "comingSoon": {
+    "status": "In Kürze verfügbar",
+    "backHome": "Zurück zu Skillflash",
+    "experts": {
+      "eyebrow": "Für unabhängige Expert:innen",
+      "title": "Dein Wissen verdient eine größere Bühne.",
+      "description": "Wir entwickeln einen Ort, an dem unabhängige Expert:innen praktische Skills teilen, Formate anbieten und Lernende erreichen können.",
+      "visualLabel": "Wissen, das Menschen verbindet",
+      "switchText": "Planst du Lernen für dein Team?",
+      "switchLabel": "Für Unternehmen"
+    },
+    "enterprise": {
+      "eyebrow": "Für Teams und Unternehmen",
+      "title": "Praktische Expertise für dein Team.",
+      "description": "Wir schaffen einen einfacheren Weg, passende Expert:innen, Lernformate und relevante Skills für deine Organisation zu finden.",
+      "visualLabel": "Lernen, das Teams weiterbringt",
+      "switchText": "Möchtest du dein Wissen teilen?",
+      "switchLabel": "Für Expert:innen"
+    }
   }
 }

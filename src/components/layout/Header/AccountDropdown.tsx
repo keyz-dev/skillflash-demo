@@ -1,22 +1,23 @@
 "use client";
 
-import { Menu, Moon, Sun, User, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { setLocale, type Locale } from "@/i18n/set-locale";
-import { useTheme } from "@/lib/theme/useTheme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser as faUserRegular } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBars,
+  faUser as faUserSolid,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { cn } from "@/lib/utils";
-import { useHeroCollapse } from "@/components/layout/HeroCollapseContext";
+import { useHeaderScroll } from "@/components/layout/HeaderScrollContext";
+import { FontAwesomeGradientIcon } from "@/components/ui/FontAwesomeGradientIcon";
 
 export function AccountDropdown() {
   const t = useTranslations("account");
   const tNav = useTranslations("nav");
-  const locale = useLocale();
-  const router = useRouter();
-  const { theme, toggleTheme } = useTheme();
-  const { collapsed } = useHeroCollapse();
+  const { scrolled } = useHeaderScroll();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -31,151 +32,120 @@ export function AccountDropdown() {
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, []);
 
-  async function switchLocale(next: Locale) {
-    await setLocale(next);
-    router.refresh();
-  }
-
   const iconButtonClass = cn(
-    "flex size-10 items-center justify-center rounded-xl transition-colors duration-300",
-    collapsed
-      ? "bg-surface text-foreground"
-      : "bg-white/25 text-white",
+    "flex h-14 items-center justify-center gap-4 rounded-control px-3 shadow-card transition-colors duration-300",
+    scrolled ? "bg-surface" : "bg-header-glass",
+    "text-neutral-white",
   );
+  const menuItemClass =
+    "block w-full rounded-control px-2 py-2 font-body text-p text-secondary-pink transition-colors duration-200 hover:bg-surface hover:text-primary-orange focus-visible:bg-surface focus-visible:text-primary-orange focus-visible:outline-2 focus-visible:outline-primary-blue";
 
   return (
     <div ref={rootRef} className="relative">
-      <div className="flex items-center gap-1.5">
-        <button
-          type="button"
-          className={iconButtonClass}
-          aria-expanded={open}
-          aria-haspopup="menu"
-          aria-label={open ? tNav("closeMenu") : tNav("openMenu")}
-          onClick={() => setOpen((current) => !current)}
-        >
-          <Menu aria-hidden className="size-5" />
-        </button>
-        <button
-          type="button"
-          className={iconButtonClass}
-          aria-expanded={open}
-          aria-haspopup="menu"
-          aria-label={t("menu")}
-          onClick={() => setOpen((current) => !current)}
-        >
-          <User aria-hidden className="size-5" />
-        </button>
-      </div>
+      <button
+        type="button"
+        className={iconButtonClass}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-controls="account-menu"
+        aria-label={open ? tNav("closeMenu") : t("menu")}
+        onClick={() => setOpen((current) => !current)}
+      >
+        {scrolled ? (
+          <FontAwesomeGradientIcon icon={faBars} gradient className="size-5" />
+        ) : (
+          <FontAwesomeIcon
+            icon={faBars}
+            aria-hidden="true"
+            className="size-5"
+          />
+        )}
+        {scrolled ? (
+          <FontAwesomeGradientIcon
+            icon={open ? faUserSolid : faUserRegular}
+            gradient
+            className="size-5"
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={open ? faUserSolid : faUserRegular}
+            aria-hidden="true"
+            className="size-5"
+          />
+        )}
+      </button>
 
-      {open ? (
-        <div
-          role="menu"
-          className="absolute right-0 z-50 mt-3 w-56 rounded-card bg-background p-4 shadow-card"
-        >
-          <div className="mb-3 flex items-start justify-between">
-            <Link
-              href="#"
-              role="menuitem"
-              className="font-heading text-h6 text-primary-orange"
-              onClick={() => setOpen(false)}
-            >
-              {t("register")}
-            </Link>
-            <button
-              type="button"
-              aria-label={t("close")}
-              className="text-primary-orange"
-              onClick={() => setOpen(false)}
-            >
-              <X aria-hidden className="size-5" />
-            </button>
-          </div>
-
+      <div
+        id="account-menu"
+        role="menu"
+        aria-hidden={!open}
+        inert={!open}
+        className={cn(
+          "absolute right-0 z-50 mt-3 w-56 rounded-control bg-background p-4 shadow-card transition-[opacity,transform] duration-200",
+          open
+            ? "translate-y-0 scale-100 opacity-100"
+            : "pointer-events-none translate-y-1 scale-95 opacity-0",
+        )}
+      >
+        <div className="mb-3 flex items-start justify-between">
           <Link
             href="#"
             role="menuitem"
-            className="block py-1 font-body text-p text-secondary-pink"
+            className="rounded-control px-2 py-1 font-heading text-h6 text-primary-orange transition-colors duration-200 hover:bg-surface hover:text-secondary-pink focus-visible:bg-surface focus-visible:outline-2 focus-visible:outline-primary-blue"
             onClick={() => setOpen(false)}
           >
-            {t("login")}
+            {t("register")}
           </Link>
-
-          <div className="my-3 h-px bg-primary-orange" />
-
-          <Link
-            href="#"
-            role="menuitem"
-            className="block py-1 font-body text-p text-secondary-pink"
-            onClick={() => setOpen(false)}
-          >
-            {tNav("becomeExpert")}
-          </Link>
-          <Link
-            href="#"
-            role="menuitem"
-            className="block py-1 font-body text-p text-secondary-pink"
-            onClick={() => setOpen(false)}
-          >
-            {tNav("enterprise")}
-          </Link>
-          <Link
-            href="#"
-            role="menuitem"
-            className="block py-1 font-body text-p text-secondary-pink"
-            onClick={() => setOpen(false)}
-          >
-            {t("help")}
-          </Link>
-
-          <div className="my-3 h-px bg-border" />
-
-          <p className="mb-2 font-body text-p text-muted">{t("language")}</p>
-          <div className="mb-4 flex gap-2">
-            <button
-              type="button"
-              aria-label={t("languageDe")}
-              className={cn(
-                "rounded-full px-3 py-1 font-body text-p",
-                locale === "de"
-                  ? "bg-primary-lila text-white"
-                  : "bg-surface text-foreground",
-              )}
-              onClick={() => switchLocale("de")}
-            >
-              DE
-            </button>
-            <button
-              type="button"
-              aria-label={t("languageEn")}
-              className={cn(
-                "rounded-full px-3 py-1 font-body text-p",
-                locale === "en"
-                  ? "bg-primary-lila text-white"
-                  : "bg-surface text-foreground",
-              )}
-              onClick={() => switchLocale("en")}
-            >
-              EN
-            </button>
-          </div>
-
-          <p className="mb-2 font-body text-p text-muted">{t("theme")}</p>
           <button
             type="button"
-            onClick={toggleTheme}
-            aria-label={theme === "dark" ? t("themeLight") : t("themeDark")}
-            className="flex items-center gap-2 rounded-full bg-surface px-3 py-1.5 font-body text-p text-foreground"
+            aria-label={t("close")}
+            className="rounded-control p-2 text-primary-orange transition-colors duration-200 hover:bg-surface hover:text-secondary-pink focus-visible:bg-surface focus-visible:outline-2 focus-visible:outline-primary-blue"
+            onClick={() => setOpen(false)}
           >
-            {theme === "dark" ? (
-              <Sun aria-hidden className="size-4" />
-            ) : (
-              <Moon aria-hidden className="size-4" />
-            )}
-            {theme === "dark" ? t("themeLight") : t("themeDark")}
+            <FontAwesomeIcon
+              icon={faXmark}
+              aria-hidden="true"
+              className="size-5"
+            />
           </button>
         </div>
-      ) : null}
+
+        <Link
+          href="#"
+          role="menuitem"
+          className={menuItemClass}
+          onClick={() => setOpen(false)}
+        >
+          {t("login")}
+        </Link>
+
+        <div className="my-3 h-px bg-primary-orange" />
+
+        <Link
+          href="#"
+          role="menuitem"
+          className={menuItemClass}
+          onClick={() => setOpen(false)}
+        >
+          {tNav("becomeExpert")}
+        </Link>
+        <Link
+          href="#"
+          role="menuitem"
+          className={menuItemClass}
+          onClick={() => setOpen(false)}
+        >
+          {tNav("enterprise")}
+        </Link>
+        <Link
+          href="#"
+          role="menuitem"
+          className={menuItemClass}
+          onClick={() => setOpen(false)}
+        >
+          {t("help")}
+        </Link>
+      </div>
     </div>
   );
 }
