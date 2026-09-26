@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "becomeExpert": "Become an expert",
+    "enterprise": "Enterprise",
+    "search": "Search",
+    "experts": "Experts",
+    "events": "Events"
+  },
+  "hero": {
+    "headline": "Find the expertise you need",
+    "subheadline": "Experts, events, articles, media, and teams — practical knowledge in one place.",
+    "searchPlaceholder": "What are you looking for?"
+  },
+  "buttons": {
+    "discover": "Discover",
+    "configureSearch": "Configure search"
+  },
+  "search": {
+    "heading": "Search",
+    "placeholder": "Search skills, experts, or events"
+  },
+  "filters": {
+    "all": "All",
+    "experts": "Experts",
+    "events": "Events",
+    "articles": "Articles",
+    "media": "Media",
+    "teams": "Teams"
+  },
+  "account": {
+    "menu": "Account",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "languageDe": "German",
+    "languageEn": "English"
+  }
+}

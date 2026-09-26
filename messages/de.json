@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "becomeExpert": "Expert:in werden",
+    "enterprise": "Enterprise",
+    "search": "Suche",
+    "experts": "Expert:innen",
+    "events": "Events"
+  },
+  "hero": {
+    "headline": "Finde die Expertise, die du brauchst",
+    "subheadline": "Expert:innen, Events, Artikel, Medien und Teams — praxisnah und an einem Ort.",
+    "searchPlaceholder": "Wonach suchst du?"
+  },
+  "buttons": {
+    "discover": "Entdecken",
+    "configureSearch": "Suche konfigurieren"
+  },
+  "search": {
+    "heading": "Suche",
+    "placeholder": "Skills, Expert:innen oder Events suchen"
+  },
+  "filters": {
+    "all": "Alle",
+    "experts": "Expert:innen",
+    "events": "Events",
+    "articles": "Artikel",
+    "media": "Medien",
+    "teams": "Teams"
+  },
+  "account": {
+    "menu": "Konto",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "languageDe": "Deutsch",
+    "languageEn": "Englisch"
+  }
+}

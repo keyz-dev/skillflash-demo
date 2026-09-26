@@ -10,6 +10,12 @@
   --color-neutral-grey: #b7b7b7;
   --color-neutral-black: #200e38;
 
+  --color-background: #ffffff;
+  --color-foreground: #200e38;
+  --color-surface: #f7f6fa;
+  --color-border: #b7b7b7;
+  --color-muted: #6b6b6b;
+
   --font-heading: "Source Sans Pro", sans-serif;
   --font-body: "Quicksand", sans-serif;
 
@@ -43,4 +49,14 @@
     #ff006e 50%,
     #8338ec 100%
   );
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-background: #150b22;
+  --color-foreground: #f2eff9;
+  --color-surface: #221532;
+  --color-border: #3d2c54;
+  --color-muted: #a79bc2;
 }
