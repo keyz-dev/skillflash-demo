@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #3a86ff;
+  --color-primary-lila: #8338ec;
+  --color-primary-orange: #fb5607;
+  --color-secondary-pink: #f84e6d;
+  --color-secondary-yellow: #ffbe0b;
+  --color-neutral-white: #ffffff;
+  --color-neutral-grey: #b7b7b7;
+  --color-neutral-black: #200e38;
+
+  --font-heading: "Source Sans Pro", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+
+  --text-h1: 64px;
+  --text-h1--line-height: 72px;
+  --text-h1--font-weight: 700;
+
+  --text-h6: 24px;
+  --text-h6--line-height: 40px;
+  --text-h6--font-weight: 700;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 700;
+
+  --text-body-input: 24px;
+  --text-body-input--line-height: 24px;
+  --text-body-input--font-weight: 700;
+
+  --text-p: 16px;
+  --text-p--line-height: 24px;
+  --text-p--font-weight: 700;
+
+  --shadow-card: 0 4px 10px 0 rgb(0 0 0 / 0.1);
+
+  --radius-card: 6px;
+
+  --background-image-hero-radial: radial-gradient(
+    circle at top left,
+    #ffbe0b 0%,
+    #ff006e 50%,
+    #8338ec 100%
+  );
+}
