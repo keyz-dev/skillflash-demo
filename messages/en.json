@@ -4,12 +4,18 @@
     "enterprise": "Enterprise",
     "search": "Search",
     "experts": "Experts",
-    "events": "Events"
+    "events": "Events",
+    "home": "Back to home",
+    "primary": "Primary navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
-    "headline": "Find the expertise you need",
-    "subheadline": "Experts, events, articles, media, and teams — practical knowledge in one place.",
-    "searchPlaceholder": "What are you looking for?"
+    "headline": "Experts, events, and a range of skills",
+    "subheadline": "We connect you and your team with solid skills through diverse formats and professional experts.",
+    "searchPlaceholder": "Find skills for success..",
+    "searchPlaceholderShort": "Find skills..",
+    "backgroundAlt": ""
   },
   "buttons": {
     "discover": "Discover",
@@ -17,7 +23,8 @@
   },
   "search": {
     "heading": "Search",
-    "placeholder": "Search skills, experts, or events"
+    "placeholder": "Search skills, experts, or events",
+    "submit": "Start search"
   },
   "filters": {
     "all": "All",
@@ -29,9 +36,23 @@
   },
   "account": {
     "menu": "Account",
+    "register": "Register",
+    "login": "Sign in",
+    "help": "Help?",
+    "close": "Close",
+    "language": "Language",
+    "theme": "Appearance",
     "themeLight": "Light",
     "themeDark": "Dark",
     "languageDe": "German",
     "languageEn": "English"
+  },
+  "categories": {
+    "showMore": "Show more",
+    "imageAlt": "Illustration for the {skill} skill",
+    "projektmanagement": "Project management",
+    "agileCoaching": "Agile coaching",
+    "designThinking": "Design thinking",
+    "uxUiDesign": "UX/UI design"
   }
 }

@@ -4,12 +4,18 @@
     "enterprise": "Enterprise",
     "search": "Suche",
     "experts": "Expert:innen",
-    "events": "Events"
+    "events": "Events",
+    "home": "Zur Startseite",
+    "primary": "Hauptnavigation",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
   },
   "hero": {
-    "headline": "Finde die Expertise, die du brauchst",
-    "subheadline": "Expert:innen, Events, Artikel, Medien und Teams — praxisnah und an einem Ort.",
-    "searchPlaceholder": "Wonach suchst du?"
+    "headline": "Expert:innen, Events und diverse Skills",
+    "subheadline": "Wir vermitteln fundierte Skills für Dich und Dein Team durch diverse Formate und professionelle Expert:innen.",
+    "searchPlaceholder": "Skills für den Erfolg finden..",
+    "searchPlaceholderShort": "Skills finden..",
+    "backgroundAlt": ""
   },
   "buttons": {
     "discover": "Entdecken",
@@ -17,7 +23,8 @@
   },
   "search": {
     "heading": "Suche",
-    "placeholder": "Skills, Expert:innen oder Events suchen"
+    "placeholder": "Skills, Expert:innen oder Events suchen",
+    "submit": "Suche starten"
   },
   "filters": {
     "all": "Alle",
@@ -29,9 +36,23 @@
   },
   "account": {
     "menu": "Konto",
+    "register": "Registrieren",
+    "login": "Anmelden",
+    "help": "Hilfe?",
+    "close": "Schließen",
+    "language": "Sprache",
+    "theme": "Erscheinungsbild",
     "themeLight": "Hell",
     "themeDark": "Dunkel",
     "languageDe": "Deutsch",
     "languageEn": "Englisch"
+  },
+  "categories": {
+    "showMore": "Mehr anzeigen",
+    "imageAlt": "Illustration zum Skill {skill}",
+    "projektmanagement": "Projektmanagement",
+    "agileCoaching": "Agile Coaching",
+    "designThinking": "Design Thinking",
+    "uxUiDesign": "UX/UI Design"
   }
 }
