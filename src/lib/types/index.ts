@@ -5,3 +5,4 @@ export type { Article } from "./article";
 export type { Media } from "./media";
 export type { ResultItem } from "./result-item";
 export type { CategoryCard, CategoryCardKey } from "./category-card";
+export type { SelectedSkillState, Skill, SkillLevel } from "./skill";

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Quicksand, Source_Sans_3 } from "next/font/google";
+import { Header } from "@/components/layout/Header/Header";
+import { HeaderScrollProvider } from "@/components/layout/HeaderScrollContext";
 import { ThemeProvider } from "@/lib/theme/ThemeContext";
 import "./globals.css";
 
@@ -34,7 +36,12 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <HeaderScrollProvider>
+              <Header />
+              {children}
+            </HeaderScrollProvider>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

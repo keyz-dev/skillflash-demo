@@ -53,7 +53,7 @@ export function StickyFilterBar() {
           pinned && "fixed left-1/2 z-40 -translate-x-1/2",
           scrolled
             ? "bg-neutral-white text-foreground"
-            : "bg-header-glass text-neutral-white",
+            : "bg-header-glass/10 text-neutral-white",
         )}
       >
         <span

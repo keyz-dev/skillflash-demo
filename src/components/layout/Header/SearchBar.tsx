@@ -74,21 +74,25 @@ export function SearchBar({
           translucentHeader
             ? "text-neutral-white placeholder:text-neutral-white/70"
             : "text-foreground placeholder:text-muted",
-          isHero ? "font-body text-body-input" : "font-body text-p",
+          isHero
+            ? "font-body text-body-input placeholder:text-foreground"
+            : "font-body text-p",
         )}
       />
       <button
         type="submit"
         aria-label={tSearch("submit")}
         className={cn(
-          "flex shrink-0 items-center justify-center rounded-control transition-colors duration-200",
+          "flex shrink-0 items-center justify-center rounded-control transition-colors duration-200 bg-secondary-fade",
           scrolledHeader
             ? "bg-secondary-fade text-neutral-white"
-            : "bg-transparent hover:bg-primary-orange hover:text-neutral-white focus-visible:bg-primary-orange focus-visible:text-neutral-white",
+            : "bg-transparent hover: hover:text-neutral-white focus-visible:bg-primary-orange focus-visible:text-neutral-white",
           scrolledHeader || translucentHeader
             ? "text-neutral-white"
             : "text-primary-orange",
-          isHero ? "size-11 md:size-12" : "size-9",
+          isHero
+            ? "size-11 md:size-12 bg-secondary-fade text-neutral-white"
+            : "size-9",
         )}
       >
         <FontAwesomeIcon

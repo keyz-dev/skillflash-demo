@@ -45,7 +45,7 @@ export function Header() {
           />
 
           {/* Added the preferences for language and the mode */}
-          {/* <HeaderPreferences /> */}
+          <HeaderPreferences />
           <AccountDropdown />
         </div>
       </div>
