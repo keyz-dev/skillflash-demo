@@ -9,7 +9,7 @@ export const teams: Team[] = [
       "https://picsum.photos/seed/team-nordlicht-2/400/400",
       "https://picsum.photos/seed/team-nordlicht-3/400/400",
     ],
-    skills: ["projektmanagement"],
+    skills: ["risikomanagement"],
   },
   {
     id: "flow-collective",
@@ -18,7 +18,7 @@ export const teams: Team[] = [
       "https://picsum.photos/seed/team-flow-1/400/400",
       "https://picsum.photos/seed/team-flow-2/400/400",
     ],
-    skills: ["agile-coaching"],
+    skills: ["team-facilitation"],
   },
   {
     id: "atelier-impuls",
@@ -29,7 +29,7 @@ export const teams: Team[] = [
       "https://picsum.photos/seed/team-impuls-3/400/400",
       "https://picsum.photos/seed/team-impuls-4/400/400",
     ],
-    skills: ["design-thinking"],
+    skills: ["design-tokens"],
   },
   {
     id: "pixelbrücke",
@@ -38,6 +38,6 @@ export const teams: Team[] = [
       "https://picsum.photos/seed/team-pixel-1/400/400",
       "https://picsum.photos/seed/team-pixel-2/400/400",
     ],
-    skills: ["ux-ui-design"],
+    skills: ["ui-audit"],
   },
 ];

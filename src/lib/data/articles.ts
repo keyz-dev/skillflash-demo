@@ -7,7 +7,7 @@ export const articles: Article[] = [
     title: "Roadmaps ohne Theater",
     excerpt:
       "Wie du Prioritäten sichtbar machst, ohne dass das Board zur politischen Bühne wird.",
-    skills: ["projektmanagement"],
+    skills: ["terminplanung"],
   },
   {
     id: "retros-die-etwas-bewegen",
@@ -15,7 +15,7 @@ export const articles: Article[] = [
     title: "Retros, die etwas bewegen",
     excerpt:
       "Facilitation-Muster für Teams, die aus Wiederholungen echte Veränderungen ziehen wollen.",
-    skills: ["agile-coaching"],
+    skills: ["scrum"],
   },
   {
     id: "problemraum-erst-spaeter-loesen",
@@ -23,7 +23,7 @@ export const articles: Article[] = [
     title: "Erst den Problemraum, dann die Lösung",
     excerpt:
       "Warum frühe Prototypen oft die falsche Frage beantworten — und wie Interviews das ändern.",
-    skills: ["design-thinking"],
+    skills: ["user-interviews"],
   },
   {
     id: "interface-als-vertrag",
@@ -31,7 +31,7 @@ export const articles: Article[] = [
     title: "Das Interface als Vertrag",
     excerpt:
       "UX-Entscheidungen, die Engineering und Produkt denselben Rahmen geben.",
-    skills: ["ux-ui-design"],
+    skills: ["design-tokens"],
   },
   {
     id: "roadmap-ohne-theater2",
@@ -39,7 +39,7 @@ export const articles: Article[] = [
     title: "Roadmaps ohne Theater",
     excerpt:
       "Wie du Prioritäten sichtbar machst, ohne dass das Board zur politischen Bühne wird.",
-    skills: ["projektmanagement"],
+    skills: ["risikomanagement"],
   },
   {
     id: "retros-die-etwas-bewegen2",
@@ -47,7 +47,7 @@ export const articles: Article[] = [
     title: "Retros, die etwas bewegen",
     excerpt:
       "Facilitation-Muster für Teams, die aus Wiederholungen echte Veränderungen ziehen wollen.",
-    skills: ["agile-coaching"],
+    skills: ["kanban"],
   },
   {
     id: "problemraum-erst-spaeter-loesen2",
@@ -55,7 +55,7 @@ export const articles: Article[] = [
     title: "Erst den Problemraum, dann die Lösung",
     excerpt:
       "Warum frühe Prototypen oft die falsche Frage beantworten — und wie Interviews das ändern.",
-    skills: ["design-thinking"],
+    skills: ["wireframing"],
   },
   {
     id: "interface-als-vertrag2",
@@ -63,6 +63,6 @@ export const articles: Article[] = [
     title: "Das Interface als Vertrag",
     excerpt:
       "UX-Entscheidungen, die Engineering und Produkt denselben Rahmen geben.",
-    skills: ["ux-ui-design"],
+    skills: ["ui-audit"],
   },
 ];

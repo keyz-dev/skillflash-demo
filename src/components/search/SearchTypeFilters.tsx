@@ -16,7 +16,7 @@ export function SearchTypeFilters({
   onToggleType: (type: (typeof typeOptions)[number]["type"]) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-3 rounded-[24px] border border-border bg-white/80 px-4 py-4 shadow-card backdrop-blur-sm">
+    <div className="-mt-2 flex flex-wrap gap-3 px-1 py-0">
       {typeOptions.map(({ type, label, color }) => {
         const isActive = activeTypes.includes(type);
 

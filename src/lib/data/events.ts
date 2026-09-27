@@ -13,7 +13,7 @@ export const events: Event[] = [
       type: "offline",
       address: "Impact Hub Berlin, Rollbergstraße 28a, 12053 Berlin",
     },
-    mainSkillIds: ["projektmanagement"],
+    mainSkillIds: ["risikomanagement"],
     description:
       "Ein Praxistag zu Steuerung, Stakeholder-Klarheit und Entscheidungen in Transformationsprogrammen.",
     ticketPrice: 189,
@@ -33,7 +33,7 @@ export const events: Event[] = [
       type: "online",
       link: "https://meet.skillflash.de/agile-coaching-lab",
     },
-    mainSkillIds: ["agile-coaching"],
+    mainSkillIds: ["scrum"],
     description:
       "Zwei halbe Tage mit Live-Coaching, Fallarbeit und Ritualen für Product Owner und Scrum Master.",
     ticketPrice: 149,
@@ -53,7 +53,7 @@ export const events: Event[] = [
       type: "offline",
       address: "Design Offices Hamburg, Domstraße 10, 20095 Hamburg",
     },
-    mainSkillIds: ["design-thinking"],
+    mainSkillIds: ["user-interviews"],
     description:
       "Vom Problemraum zum getesteten Prototyp — ein kompakter Workshop für gemischte Produktteams.",
     ticketPrice: 219,
@@ -73,7 +73,7 @@ export const events: Event[] = [
       type: "online",
       link: "https://meet.skillflash.de/ux-systems-day",
     },
-    mainSkillIds: ["ux-ui-design"],
+    mainSkillIds: ["design-tokens"],
     description:
       "Nachmittag zu Design Systemen, Entscheidungsarchitektur und Zusammenarbeit zwischen Design und Engineering.",
     ticketPrice: 99,

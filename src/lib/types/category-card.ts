@@ -1,11 +1,13 @@
 export type CategoryCardKey =
   | "projektmanagement"
+  | "uxDesign"
+  | "leadership"
+  | "marketing"
   | "frontendDevelopment"
   | "graphicDesign"
   | "training"
   | "foreignLanguage"
   | "drawing"
-  | "leadership"
   | "designThinking";
 
 export interface CategoryCard {
