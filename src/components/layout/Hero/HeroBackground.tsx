@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 
-export function HeroBackground() {
+export function HeroBackground({ translateY = 20 }: { translateY?: number }) {
   return (
-    <div className="absolute inset-0 overflow-hidden md:-translate-y-20">
+    <div
+      className={`absolute inset-0 overflow-hidden md:-translate-y-${translateY}`}
+    >
       <Image
         src="/assets/images/hero/hero-vector.png"
         alt=""

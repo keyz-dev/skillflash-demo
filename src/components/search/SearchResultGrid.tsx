@@ -12,7 +12,7 @@ export function SearchResultGrid({
   skills: Skill[];
 }) {
   return (
-    <div className="mt-10 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {filteredResults.length > 0 ? (
         filteredResults.map((item) => (
           <SearchResultCard
