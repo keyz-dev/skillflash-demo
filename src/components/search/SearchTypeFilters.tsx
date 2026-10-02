@@ -29,31 +29,33 @@ export function SearchTypeFilters({
   onToggleType: (type: SearchResultType) => void;
 }) {
   return (
-    <div className="relative z-10 w-full">
-      <div className="flex flex-wrap items-center justify-center gap-3 px-1 py-0 md:justify-start">
-        {resultTypeOptions.map(({ type, label, color }) => {
-          const isActive = activeTypes.includes(type);
+    <div className="contents w-full md:block md:h-auto">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background shadow-card md:static md:z-10 md:border-0 md:bg-transparent md:shadow-none">
+        <div className="flex flex-nowrap items-center gap-3 overflow-x-auto overscroll-x-contain px-4 py-2 md:flex-wrap md:justify-start md:overflow-visible md:px-1 md:py-0">
+          {resultTypeOptions.map(({ type, label, color }) => {
+            const isActive = activeTypes.includes(type);
 
-          return (
-            <button
-              key={type}
-              type="button"
-              aria-pressed={isActive}
-              onClick={() => onToggleType(type)}
-              className={cn(
-                "flex cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-card transition-all duration-200 ease-out",
-                "hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98] active:transition-transform active:duration-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
-                color,
-                isActive
-                  ? "opacity-100 shadow-[0_8px_18px_rgba(0,0,0,0.18)]"
-                  : "opacity-60 grayscale-[0.2] hover:opacity-80",
-              )}
-            >
-              <span>{label}</span>
-              {isActive ? <ClosePillIcon /> : null}
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={type}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => onToggleType(type)}
+                className={cn(
+                  "flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-card transition-all duration-200 ease-out",
+                  "hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98] active:transition-transform active:duration-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+                  color,
+                  isActive
+                    ? "opacity-100 shadow-[0_8px_18px_rgba(0,0,0,0.18)]"
+                    : "opacity-60 grayscale-[0.2] hover:opacity-80",
+                )}
+              >
+                <span>{label}</span>
+                {isActive ? <ClosePillIcon /> : null}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ export function StickyFilterBar() {
           "flex h-10 items-center gap-2 rounded-control px-4 py-2 font-heading text-p shadow-card transition-colors duration-200",
           pinned && "fixed left-1/2 z-40 -translate-x-1/2",
           scrolled
-            ? "bg-neutral-white text-foreground"
+            ? "bg-neutral-white text-foreground px-2"
             : "bg-header-glass/10 text-neutral-white",
         )}
       >

@@ -12,7 +12,7 @@ export function Card({
   className?: string;
 }) {
   const cardClassName = cn(
-    "group relative h-[404px] w-full max-w-[304px] overflow-hidden rounded-card bg-background shadow-card transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-card-hover",
+    "group relative h-[404px] w-full px-2 sm:px-0 w-full sm:max-w-[304px] overflow-hidden rounded-card bg-background shadow-card transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-card-hover",
     className,
   );
 
