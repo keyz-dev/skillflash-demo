@@ -17,7 +17,7 @@ export function SkillCard({
   return (
     <Link
       href={card.href}
-      className="group/card block h-[404px] w-full max-w-[304px] cursor-pointer hover:z-10 focus-within:z-10"
+      className="group/card block px-2 md:px-0 h-[404px] w-full md:max-w-[304px] cursor-pointer hover:z-10 focus-within:z-10"
       aria-label={`Open ${categoryLabel} search results`}
     >
       <div className="relative flex h-full w-full flex-col overflow-hidden rounded-card bg-background shadow-card transition-[transform,box-shadow] duration-200 ease-out group-hover/card:-translate-y-0.5 group-hover/card:shadow-card-hover group-focus-within/card:-translate-y-0.5 group-focus-within/card:shadow-card-hover motion-reduce:transition-none">
@@ -27,7 +27,7 @@ export function SkillCard({
             alt={imageAlt}
             fill
             sizes="(min-width: 1280px) 304px, (min-width: 640px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover border border-transparent"
           />
 
           {/* Card fade overlay */}

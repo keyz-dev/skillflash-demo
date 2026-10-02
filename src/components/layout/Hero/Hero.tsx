@@ -40,15 +40,15 @@ export function Hero() {
 
       <div className="relative mx-auto flex flex-col items-center px-4 pb-24 pt-28 text-center md:px-8 md:pt-48">
         <div className="flex w-full flex-col items-center">
-          <h1 className="font-heading text-h6 text-neutral-white md:text-h1">
+          <h1 className="font-heading text-4xl leading-tight text-neutral-white md:text-h1">
             {t("headline")}
           </h1>
-          <p className="mt-4 font-body text-p text-neutral-white md:text-body-lg">
+          <p className="mt-4 font-body text-lg leading-snug text-neutral-white md:text-body-lg">
             {t("subheadline")}
           </p>
         </div>
 
-        <SearchBar variant="hero" className="mt-8 w-full" />
+        <SearchBar variant="hero" className="mt-8 hidden w-full md:flex" />
         <StickyFilterBar />
       </div>
     </section>

@@ -44,7 +44,7 @@
   --shadow-card: 0 4px 10px 0 rgb(0 0 0 / 0.1);
   --shadow-card-hover: 0 8px 16px 0 rgb(0 0 0 / 0.14);
 
-  --radius-card: 6px;
+  --radius-card: 8px;
   --radius-control: 6px;
 
   --background-image-hero-radial: radial-gradient(

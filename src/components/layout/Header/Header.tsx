@@ -30,7 +30,7 @@ export function Header() {
     <header
       ref={headerRef}
       className={cn(
-        "fixed top-0 z-50 md:py-2 md:px-4 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full px-3 transition-all duration-300 md:px-4 md:py-2",
         scrolled ? "bg-background shadow-card" : "bg-transparent",
       )}
     >
@@ -44,8 +44,9 @@ export function Header() {
             className="transition-all duration-300"
           />
 
-          {/* Added the preferences for language and the mode */}
-          <HeaderPreferences />
+          <div className="hidden md:block">
+            <HeaderPreferences />
+          </div>
           <AccountDropdown />
         </div>
       </div>

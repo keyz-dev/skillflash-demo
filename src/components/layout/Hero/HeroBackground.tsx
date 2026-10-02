@@ -7,13 +7,20 @@ export function HeroBackground({ translateY = 10 }: { translateY?: number }) {
     <div
       className={`absolute inset-0 overflow-hidden md:-translate-y-${translateY}`}
     >
-      <Image
-        src="/assets/images/hero/hero-vector.png"
-        alt=""
-        fill
-        priority
-        className="object-fit object-top md:-translate-y-9"
-      />
+      <picture className="absolute inset-0">
+        <source
+          media="(max-width: 767px)"
+          srcSet="/assets/images/hero/Mobile%20Background.png"
+        />
+        <Image
+          src="/assets/images/hero/hero-vector.png"
+          alt=""
+          fill
+          sizes="100vw"
+          fetchPriority="high"
+          className="object-cover object-center md:object-fill md:object-top md:-translate-y-9"
+        />
+      </picture>
     </div>
   );
 }
