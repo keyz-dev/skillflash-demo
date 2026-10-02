@@ -16,8 +16,8 @@ export function TeamCard({ team, skills }: { team: Team; skills: Skill[] }) {
   return (
     <Card>
       <CardFloatingActions />
-      <div className="flex h-full flex-col items-center px-4 pb-4 pt-6">
-        <div className="relative mb-5 flex size-32 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
+      <div className="flex h-full flex-col items-center px-4 pb-4 pt-12">
+        <div className="relative mb-5 flex size-40 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
           <Image
             src={
               team.memberAvatarUrls[0] ??
@@ -53,7 +53,7 @@ export function TeamCard({ team, skills }: { team: Team; skills: Skill[] }) {
           </div>
         </div>
 
-        <div className="mt-auto flex w-full items-center justify-between gap-2 border-t border-border pt-4">
+        <div className="mt-auto flex w-full items-center justify-between gap-2 pt-4">
           <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
             {team.skills
               .slice(0, 2)

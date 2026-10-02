@@ -24,11 +24,11 @@ export function CardLayoutA({
   return (
     <div
       className={cn(
-        "flex h-full flex-col items-center px-4 pb-4 pt-6",
+        "flex h-full flex-col items-center px-4 pb-4 pt-12",
         className,
       )}
     >
-      <div className="relative mb-5 flex size-32 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
+      <div className="relative mb-5 flex size-40 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
         <Image
           src={avatarUrl}
           alt={title}
@@ -43,7 +43,7 @@ export function CardLayoutA({
         <p className="mt-2 font-body text-p text-foreground/70">{subtitle}</p>
       </div>
 
-      <div className="mt-auto flex w-full items-center justify-between gap-2 border-t border-border pt-4">
+      <div className="mt-auto flex w-full items-center justify-between gap-2 pt-4">
         <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
           {skillTags.map((tag) => (
             <li

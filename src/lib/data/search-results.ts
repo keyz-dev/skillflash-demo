@@ -1,4 +1,5 @@
 import type { ResultItem } from "@/lib/types";
+import { articles } from "./articles";
 
 export const searchResults: ResultItem[] = [
   {
@@ -143,39 +144,10 @@ export const searchResults: ResultItem[] = [
       previewImage: "https://picsum.photos/seed/event-design-thinking/400/400",
     },
   },
-  {
-    type: "article",
-    data: {
-      id: "roadmaps-ohne-theater",
-      authorId: "lena-hoffmann",
-      title: "Roadmaps ohne Theater",
-      excerpt:
-        "Wie du Prioritäten sichtbar machst, ohne dass das Board zur politischen Bühne wird.",
-      skills: ["terminplanung"],
-    },
-  },
-  {
-    type: "article",
-    data: {
-      id: "retros-die-etwas-bewegen",
-      authorId: "jonas-weber",
-      title: "Retros, die etwas bewegen",
-      excerpt:
-        "Facilitation-Muster für Teams, die aus Wiederholungen echte Veränderungen ziehen wollen.",
-      skills: ["scrum"],
-    },
-  },
-  {
-    type: "article",
-    data: {
-      id: "problemraum-erst-spaeter-loesen",
-      authorId: "mira-khalil",
-      title: "Erst den Problemraum, dann die Lösung",
-      excerpt:
-        "Warum frühe Prototypen oft die falsche Frage beantworten — und wie Interviews das ändern.",
-      skills: ["user-interviews"],
-    },
-  },
+  ...articles.slice(0, 3).map((article) => ({
+    type: "article" as const,
+    data: article,
+  })),
   {
     type: "media",
     data: {

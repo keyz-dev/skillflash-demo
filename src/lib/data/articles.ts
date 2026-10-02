@@ -7,6 +7,8 @@ export const articles: Article[] = [
     title: "Roadmaps ohne Theater",
     excerpt:
       "Wie du Prioritäten sichtbar machst, ohne dass das Board zur politischen Bühne wird.",
+    previewImage:
+      "https://picsum.photos/seed/article-roadmap-ohne-theater/608/408",
     skills: ["terminplanung"],
   },
   {
@@ -15,6 +17,8 @@ export const articles: Article[] = [
     title: "Retros, die etwas bewegen",
     excerpt:
       "Facilitation-Muster für Teams, die aus Wiederholungen echte Veränderungen ziehen wollen.",
+    previewImage:
+      "https://picsum.photos/seed/article-retros-die-etwas-bewegen/608/408",
     skills: ["scrum"],
   },
   {
@@ -23,6 +27,8 @@ export const articles: Article[] = [
     title: "Erst den Problemraum, dann die Lösung",
     excerpt:
       "Warum frühe Prototypen oft die falsche Frage beantworten — und wie Interviews das ändern.",
+    previewImage:
+      "https://picsum.photos/seed/article-problemraum-zuerst/608/408",
     skills: ["user-interviews"],
   },
   {
@@ -31,6 +37,8 @@ export const articles: Article[] = [
     title: "Das Interface als Vertrag",
     excerpt:
       "UX-Entscheidungen, die Engineering und Produkt denselben Rahmen geben.",
+    previewImage:
+      "https://picsum.photos/seed/article-interface-vertrag/608/408",
     skills: ["design-tokens"],
   },
   {
@@ -39,6 +47,8 @@ export const articles: Article[] = [
     title: "Roadmaps ohne Theater",
     excerpt:
       "Wie du Prioritäten sichtbar machst, ohne dass das Board zur politischen Bühne wird.",
+    previewImage:
+      "https://picsum.photos/seed/article-roadmap-risikomanagement/608/408",
     skills: ["risikomanagement"],
   },
   {
@@ -47,6 +57,7 @@ export const articles: Article[] = [
     title: "Retros, die etwas bewegen",
     excerpt:
       "Facilitation-Muster für Teams, die aus Wiederholungen echte Veränderungen ziehen wollen.",
+    previewImage: "https://picsum.photos/seed/article-retros-kanban/608/408",
     skills: ["kanban"],
   },
   {
@@ -55,6 +66,8 @@ export const articles: Article[] = [
     title: "Erst den Problemraum, dann die Lösung",
     excerpt:
       "Warum frühe Prototypen oft die falsche Frage beantworten — und wie Interviews das ändern.",
+    previewImage:
+      "https://picsum.photos/seed/article-problemraum-wireframing/608/408",
     skills: ["wireframing"],
   },
   {
@@ -63,6 +76,8 @@ export const articles: Article[] = [
     title: "Das Interface als Vertrag",
     excerpt:
       "UX-Entscheidungen, die Engineering und Produkt denselben Rahmen geben.",
+    previewImage:
+      "https://picsum.photos/seed/article-interface-ui-audit/608/408",
     skills: ["ui-audit"],
   },
 ];

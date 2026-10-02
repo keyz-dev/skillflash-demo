@@ -26,53 +26,54 @@ export function CardLayoutB({
   showMoreLabel?: string;
   className?: string;
 }) {
-  const resolvedEntity = entityType ?? (variant === "event" ? "event" : variant === "media" ? "media" : "article");
+  const resolvedEntity = entityType ?? "event";
   const accent = entityAccentClasses[resolvedEntity];
-  const showAuthor = Boolean(authorAvatarUrl && variant !== "media");
+  const showAuthor = Boolean(authorAvatarUrl);
 
   return (
-    <div className={cn("flex h-full flex-col", className)}>
-      <div className="relative h-[200px] overflow-hidden">
-        {variant === "media" ? (
-          <div className="flex h-full items-center justify-center bg-neutral-black/90">
-            <div className="flex size-16 items-center justify-center rounded-full border-4 border-white/80 text-2xl text-white">
-              ▶
-            </div>
-          </div>
-        ) : (
-          <Image
-            src={imageUrl}
-            alt={title}
-            fill
-            className="object-cover"
-            sizes="304px"
-          />
-        )}
-
-        {variant === "event" && dateLabel ? (
-          <div className="absolute left-4 bottom-[-18px] z-10 rounded-full bg-neutral-black px-5 py-3 font-heading text-p text-neutral-white shadow-card">
-            {dateLabel}
-          </div>
-        ) : null}
-
-        {showAuthor ? (
-          <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white shadow-card">
-            <Image
-              src={authorAvatarUrl ?? imageUrl}
-              alt="author"
-              fill
-              className="object-cover"
-              sizes="40px"
-            />
-          </div>
-        ) : null}
+    <div className={cn("relative flex h-full min-h-0 flex-col", className)}>
+      <div className="absolute inset-x-0 bottom-18 top-0">
+        <Image
+          src={imageUrl}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="304px"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-card-fade"
+        />
       </div>
 
-      <div className="flex flex-1 flex-col px-4 pt-8">
+      {showAuthor ? (
+        <div className="absolute left-4 top-8 z-10 size-14 overflow-hidden rounded-full border-2 border-white bg-white shadow-card">
+          <Image
+            src={authorAvatarUrl ?? imageUrl}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="56px"
+          />
+        </div>
+      ) : null}
+
+      {dateLabel ? (
+        <div className="absolute left-4 top-28 z-10 rounded-full bg-neutral-black px-4 py-2 font-heading text-p text-neutral-white shadow-card">
+          {dateLabel}
+        </div>
+      ) : null}
+
+      <div
+        className={cn(
+          "relative z-10 flex min-h-0 flex-1 flex-col px-4",
+          variant === "article" ? "pt-38" : "pt-41",
+        )}
+      >
         <h3 className="line-clamp-2 font-heading text-h6 text-foreground">
           {title}
         </h3>
-        <p className="mt-2 line-clamp-3 font-body text-p text-foreground/70">
+        <p className="mt-2 line-clamp-2 font-body text-p text-foreground">
           {description}
         </p>
 
@@ -83,13 +84,13 @@ export function CardLayoutB({
         ) : null}
       </div>
 
-      <div className="flex items-center justify-between gap-2 border-t border-border px-4 py-3">
+      <footer className="relative z-10 flex h-18 shrink-0 items-center justify-between gap-2 bg-background px-4">
         <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
           {skillTags.map((tag) => (
             <li
               key={tag}
               className={cn(
-                "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p",
+                "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p shadow-card",
                 accent.tagBorder,
                 accent.tagText,
               )}
@@ -101,7 +102,7 @@ export function CardLayoutB({
         <span className={cn("shrink-0 font-heading text-p", accent.count)}>
           {resultCount ?? 24}..
         </span>
-      </div>
+      </footer>
     </div>
   );
 }
