@@ -79,7 +79,7 @@ export function SearchHero({
 
   return (
     <section className="relative min-h-120 md:min-h-138">
-      <HeroBackground translateY={12} />
+      <HeroBackground translateY={5} />
 
       <div
         ref={sentinelRef}

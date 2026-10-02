@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, entityAccentClasses, type EntityType } from "@/lib/utils";
 
 export function CardLayoutB({
   imageUrl,
@@ -8,6 +8,7 @@ export function CardLayoutB({
   skillTags,
   resultCount,
   variant = "article",
+  entityType,
   dateLabel,
   authorAvatarUrl,
   showMoreLabel,
@@ -19,11 +20,14 @@ export function CardLayoutB({
   skillTags: string[];
   resultCount?: number;
   variant?: "event" | "article" | "media";
+  entityType?: EntityType;
   dateLabel?: string;
   authorAvatarUrl?: string;
   showMoreLabel?: string;
   className?: string;
 }) {
+  const resolvedEntity = entityType ?? (variant === "event" ? "event" : variant === "media" ? "media" : "article");
+  const accent = entityAccentClasses[resolvedEntity];
   const showAuthor = Boolean(authorAvatarUrl && variant !== "media");
 
   return (
@@ -46,7 +50,7 @@ export function CardLayoutB({
         )}
 
         {variant === "event" && dateLabel ? (
-          <div className="absolute left-4 top-4 rounded-full bg-white px-3 py-2 font-heading text-p text-foreground shadow-card">
+          <div className="absolute left-4 bottom-[-18px] z-10 rounded-full bg-neutral-black px-5 py-3 font-heading text-p text-neutral-white shadow-card">
             {dateLabel}
           </div>
         ) : null}
@@ -64,7 +68,7 @@ export function CardLayoutB({
         ) : null}
       </div>
 
-      <div className="flex flex-1 flex-col px-4 pt-4">
+      <div className="flex flex-1 flex-col px-4 pt-8">
         <h3 className="line-clamp-2 font-heading text-h6 text-foreground">
           {title}
         </h3>
@@ -73,28 +77,29 @@ export function CardLayoutB({
         </p>
 
         {showMoreLabel ? (
-          <button
-            type="button"
-            className="mt-2 text-left font-body text-p text-primary-blue underline underline-offset-2"
-          >
+          <span className="mt-2 w-fit font-body text-p text-primary-blue underline underline-offset-2 transition-colors hover:text-primary-lila">
             {showMoreLabel}
-          </button>
+          </span>
         ) : null}
       </div>
 
       <div className="flex items-center justify-between gap-2 border-t border-border px-4 py-3">
-        <div className="flex min-w-0 items-center gap-2 overflow-hidden">
+        <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
           {skillTags.map((tag) => (
-            <span
+            <li
               key={tag}
-              className="rounded-full border border-neutral-black bg-background px-2 py-1 font-body text-[11px] text-foreground"
+              className={cn(
+                "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p",
+                accent.tagBorder,
+                accent.tagText,
+              )}
             >
               {tag}
-            </span>
+            </li>
           ))}
-        </div>
-        <span className="shrink-0 font-heading text-p text-foreground">
-          {resultCount ?? 24}
+        </ul>
+        <span className={cn("shrink-0 font-heading text-p", accent.count)}>
+          {resultCount ?? 24}..
         </span>
       </div>
     </div>

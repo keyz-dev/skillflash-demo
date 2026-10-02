@@ -19,9 +19,17 @@ export function ExpertCard({
     <Card>
       <CardFloatingActions />
       <CardLayoutA
+        entityType="expert"
         avatarUrl={expert.avatarUrl}
         title={expert.name}
-        subtitle={`${expert.yearsExperience} Jahre Erfahrung`}
+        subtitle={
+          <>
+            <strong className="font-heading text-foreground">
+              {expert.yearsExperience} Jahre
+            </strong>{" "}
+            Berufserfahrung
+          </>
+        }
         skillTags={expert.skills
           .slice(0, 2)
           .map((skillId) => getSkillName(skillId, skills))}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export function HeroBackground({ translateY = 20 }: { translateY?: number }) {
+export function HeroBackground({ translateY = 10 }: { translateY?: number }) {
   return (
     <div
       className={`absolute inset-0 overflow-hidden md:-translate-y-${translateY}`}
@@ -12,7 +12,7 @@ export function HeroBackground({ translateY = 20 }: { translateY?: number }) {
         alt=""
         fill
         priority
-        className="object-fit object-top md:-translate-y-10"
+        className="object-fit object-top md:-translate-y-9"
       />
     </div>
   );

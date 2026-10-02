@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { resultTypeOptions, type SearchResultType } from "./search-config";
 
 function ClosePillIcon() {
   return (
@@ -20,25 +21,17 @@ function ClosePillIcon() {
   );
 }
 
-const typeOptions = [
-  { type: "expert", label: "Expert:innen", color: "bg-primary-blue" },
-  { type: "event", label: "Events", color: "bg-primary-lila" },
-  { type: "article", label: "Artikel", color: "bg-primary-orange" },
-  { type: "media", label: "Audio/Video", color: "bg-secondary-pink" },
-  { type: "team", label: "Teams", color: "bg-pink-500" },
-] as const;
-
 export function SearchTypeFilters({
   activeTypes,
   onToggleType,
 }: {
-  activeTypes: (typeof typeOptions)[number]["type"][];
-  onToggleType: (type: (typeof typeOptions)[number]["type"]) => void;
+  activeTypes: SearchResultType[];
+  onToggleType: (type: SearchResultType) => void;
 }) {
   return (
     <div className="relative z-10 w-full">
       <div className="flex flex-wrap items-center justify-center gap-3 px-1 py-0 md:justify-start">
-        {typeOptions.map(({ type, label, color }) => {
+        {resultTypeOptions.map(({ type, label, color }) => {
           const isActive = activeTypes.includes(type);
 
           return (

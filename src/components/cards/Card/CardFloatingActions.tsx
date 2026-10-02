@@ -10,6 +10,7 @@ import {
   faCircle as faCircleSolid,
   faShareNodes,
 } from "@fortawesome/free-solid-svg-icons";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -17,18 +18,19 @@ const actionButtonBaseClass =
   "flex size-9 cursor-pointer items-center justify-center rounded-full bg-neutral-white shadow-card transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue";
 
 export function CardFloatingActions() {
+  const t = useTranslations("categories.actions");
   const [selected, setSelected] = useState(false);
   const [saved, setSaved] = useState(false);
 
   return (
     <div
       role="group"
-      aria-label="Card actions"
-      className="absolute right-3 top-3 z-20 flex flex-col gap-2"
+      aria-label={t("share")}
+      className="absolute right-3 top-3 z-20 flex flex-col gap-2 opacity-100 transition-[opacity,transform] duration-200 md:pointer-events-none md:translate-x-1 md:opacity-0 md:group-hover:pointer-events-auto md:group-hover:translate-x-0 md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:translate-x-0 md:group-focus-within:opacity-100"
     >
       <button
         type="button"
-        aria-label={selected ? "Auswahl entfernen" : "Auswahl hinzufügen"}
+        aria-label={selected ? t("remove") : t("add")}
         aria-pressed={selected}
         className={actionButtonBaseClass}
         onClick={() => setSelected((value) => !value)}
@@ -62,8 +64,8 @@ export function CardFloatingActions() {
 
       <button
         type="button"
-        aria-label="Teilen"
-        title="Teilen"
+        aria-label={t("share")}
+        title={t("share")}
         className={cn(actionButtonBaseClass, "text-primary-lila")}
         onClick={() => console.info("Share action is not implemented yet.")}
       >
@@ -76,7 +78,7 @@ export function CardFloatingActions() {
 
       <button
         type="button"
-        aria-label={saved ? "Merken entfernen" : "Merken"}
+        aria-label={saved ? t("unsave") : t("save")}
         aria-pressed={saved}
         className={cn(
           actionButtonBaseClass,

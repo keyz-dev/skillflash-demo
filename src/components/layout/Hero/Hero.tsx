@@ -30,7 +30,7 @@ export function Hero() {
   }, [setScrolled]);
 
   return (
-    <section className="relative min-h-[34rem] md:min-h-[40rem]">
+    <section className="relative min-h-[34rem] md:min-h-[36rem]">
       <HeroBackground />
       <div
         ref={sentinelRef}

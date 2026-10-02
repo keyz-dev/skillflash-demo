@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import { cn, entityAccentClasses, type EntityType } from "@/lib/utils";
 
 export function CardLayoutA({
   avatarUrl,
@@ -7,15 +8,19 @@ export function CardLayoutA({
   subtitle,
   skillTags,
   resultCount,
+  entityType = "expert",
   className,
 }: {
   avatarUrl: string;
   title: string;
-  subtitle: string;
+  subtitle: ReactNode;
   skillTags: string[];
   resultCount?: number;
+  entityType?: EntityType;
   className?: string;
 }) {
+  const accent = entityAccentClasses[entityType];
+
   return (
     <div
       className={cn(
@@ -39,18 +44,22 @@ export function CardLayoutA({
       </div>
 
       <div className="mt-auto flex w-full items-center justify-between gap-2 border-t border-border pt-4">
-        <div className="flex min-w-0 items-center gap-2 overflow-hidden">
+        <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
           {skillTags.map((tag) => (
-            <span
+            <li
               key={tag}
-              className="rounded-full border border-neutral-black bg-background px-2 py-1 font-body text-[11px] text-foreground"
+              className={cn(
+                "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p",
+                accent.tagBorder,
+                accent.tagText,
+              )}
             >
               {tag}
-            </span>
+            </li>
           ))}
-        </div>
-        <span className="shrink-0 font-heading text-p text-foreground">
-          {resultCount ?? 24}
+        </ul>
+        <span className={cn("shrink-0 font-heading text-p", accent.count)}>
+          {resultCount ?? 24}..
         </span>
       </div>
     </div>
