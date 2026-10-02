@@ -43,6 +43,7 @@
 
   --shadow-card: 0 15px 15px 0 rgb(0 0 0 / 0.1);
   --shadow-card-hover: 0 8px 16px 0 rgb(0 0 0 / 0.14);
+  --shadow-skill-tag: 0 6px 22px -3px rgb(32 14 56 / 0.22);
 
   --radius-card: 8px;
   --radius-control: 6px;

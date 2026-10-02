@@ -27,7 +27,7 @@ export const entityAccentClasses: Record<EntityType, EntityAccentClasses> = {
   event: {
     tagBorder: "border-primary-lila",
     tagText: "text-primary-lila",
-    count: "text-primary-blue",
+    count: "text-primary-lila",
   },
   article: {
     tagBorder: "border-primary-orange",
@@ -37,6 +37,6 @@ export const entityAccentClasses: Record<EntityType, EntityAccentClasses> = {
   media: {
     tagBorder: "border-neutral-black",
     tagText: "text-neutral-black",
-    count: "text-secondary-pink",
+    count: "text-neutral-black",
   },
 };

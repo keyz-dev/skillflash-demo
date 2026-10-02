@@ -52,17 +52,17 @@ export function SkillCard({
         </div>
 
         <footer className="flex h-[72px] shrink-0 items-center justify-between gap-2 px-4">
-          <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
+          <ul className="flex min-w-0 flex-1 items-center gap-2">
             {card.skillTags.slice(0, 2).map((tag) => (
               <li
                 key={tag}
-                className="shrink-0 cursor-pointer rounded-full border-2 border-neutral-black bg-background px-3 py-1 font-body text-p text-foreground shadow-card transition-colors duration-200 hover:bg-neutral-grey/40"
+                className="min-w-0 cursor-pointer rounded-full border-2 border-neutral-black bg-background px-3 py-1 font-body text-p font-bold text-foreground shadow-skill-tag transition-colors duration-200 hover:bg-neutral-grey/40"
               >
-                {tag}
+                <span className="block truncate">{tag}</span>
               </li>
             ))}
           </ul>
-          <span className="shrink-0 font-heading text-p text-foreground">
+          <span className="shrink-0 font-heading text-p font-bold text-foreground">
             {card.resultCount}..
           </span>
         </footer>

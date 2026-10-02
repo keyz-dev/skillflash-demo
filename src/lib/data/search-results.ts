@@ -1,5 +1,6 @@
 import type { ResultItem } from "@/lib/types";
 import { articles } from "./articles";
+import { media } from "./media";
 
 export const searchResults: ResultItem[] = [
   {
@@ -148,42 +149,10 @@ export const searchResults: ResultItem[] = [
     type: "article" as const,
     data: article,
   })),
-  {
-    type: "media",
-    data: {
-      id: "steuerung-im-wandel",
-      authorId: "lena-hoffmann",
-      title: "Steuerung im Wandel",
-      description:
-        "Kurzimpuls zu Meilensteinen, Risiken und dem Umgang mit unklaren Auftraggebern.",
-      videoUrl: "https://picsum.photos/seed/media-steuerung/400/400",
-      skills: ["risikomanagement"],
-    },
-  },
-  {
-    type: "media",
-    data: {
-      id: "coaching-im-sprint",
-      authorId: "jonas-weber",
-      title: "Coaching im Sprint",
-      description:
-        "Wie du als Agile Coach im Alltag intervenierst, ohne das Team zu übersteuern.",
-      videoUrl: "https://picsum.photos/seed/media-coaching-sprint/400/400",
-      skills: ["scrum"],
-    },
-  },
-  {
-    type: "media",
-    data: {
-      id: "ideation-unter-zeitdruck",
-      authorId: "mira-khalil",
-      title: "Ideation unter Zeitdruck",
-      description:
-        "Ein 20-Minuten-Format, das divergentes Denken in Workshops wirklich öffnet.",
-      videoUrl: "https://picsum.photos/seed/media-ideation/400/400",
-      skills: ["user-interviews"],
-    },
-  },
+  ...media.slice(0, 3).map((item) => ({
+    type: "media" as const,
+    data: item,
+  })),
   {
     type: "team",
     data: {

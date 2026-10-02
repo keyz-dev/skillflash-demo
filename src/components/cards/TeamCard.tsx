@@ -54,7 +54,7 @@ export function TeamCard({ team, skills }: { team: Team; skills: Skill[] }) {
         </div>
 
         <div className="mt-auto flex w-full items-center justify-between gap-2 pt-4">
-          <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
+          <ul className="flex min-w-0 flex-1 items-center gap-2">
             {team.skills
               .slice(0, 2)
               .map((skillId) => getSkillName(skillId, skills))
@@ -62,16 +62,21 @@ export function TeamCard({ team, skills }: { team: Team; skills: Skill[] }) {
                 <li
                   key={tag}
                   className={cn(
-                    "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p",
+                    "min-w-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p font-bold shadow-skill-tag",
                     accent.tagBorder,
                     accent.tagText,
                   )}
                 >
-                  {tag}
+                  <span className="block truncate">{tag}</span>
                 </li>
               ))}
           </ul>
-          <span className={cn("shrink-0 font-heading text-p", accent.count)}>
+          <span
+            className={cn(
+              "shrink-0 font-heading text-p font-bold",
+              accent.count,
+            )}
+          >
             24..
           </span>
         </div>

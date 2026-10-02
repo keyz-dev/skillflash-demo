@@ -7,7 +7,6 @@ export const media: Media[] = [
     title: "Steuerung im Wandel",
     description:
       "Kurzimpuls zu Meilensteinen, Risiken und dem Umgang mit unklaren Auftraggebern.",
-    videoUrl: "https://picsum.photos/seed/media-steuerung/400/400",
     skills: ["risikomanagement"],
   },
   {
@@ -16,7 +15,6 @@ export const media: Media[] = [
     title: "Coaching im Sprint",
     description:
       "Wie du als Agile Coach im Alltag intervenierst, ohne das Team zu übersteuern.",
-    videoUrl: "https://picsum.photos/seed/media-coaching-sprint/400/400",
     skills: ["scrum"],
   },
   {
@@ -25,7 +23,6 @@ export const media: Media[] = [
     title: "Ideation unter Zeitdruck",
     description:
       "Ein 20-Minuten-Format, das divergentes Denken in Workshops wirklich öffnet.",
-    videoUrl: "https://picsum.photos/seed/media-ideation/400/400",
     skills: ["user-interviews"],
   },
   {
@@ -34,7 +31,6 @@ export const media: Media[] = [
     title: "Visuelle Hierarchie in Produkt-UIs",
     description:
       "Praktische Beispiele, wie Typografie und Abstand komplexe Oberflächen lesbar machen.",
-    videoUrl: "https://picsum.photos/seed/media-visual-hierarchy/400/400",
     skills: ["design-tokens"],
   },
 ];

@@ -44,21 +44,23 @@ export function CardLayoutA({
       </div>
 
       <div className="mt-auto flex w-full items-center justify-between gap-2 pt-4">
-        <ul className="flex min-w-0 items-center gap-2 overflow-hidden">
+        <ul className="flex min-w-0 flex-1 items-center gap-2">
           {skillTags.map((tag) => (
             <li
               key={tag}
               className={cn(
-                "shrink-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p",
+                "min-w-0 rounded-full border-2 bg-background px-3 py-1 font-body text-p font-bold shadow-skill-tag",
                 accent.tagBorder,
                 accent.tagText,
               )}
             >
-              {tag}
+              <span className="block truncate">{tag}</span>
             </li>
           ))}
         </ul>
-        <span className={cn("shrink-0 font-heading text-p", accent.count)}>
+        <span
+          className={cn("shrink-0 font-heading text-p font-bold", accent.count)}
+        >
           {resultCount ?? 24}..
         </span>
       </div>

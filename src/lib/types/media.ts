@@ -3,6 +3,10 @@ export interface Media {
   authorId: string;
   title: string;
   description: string;
-  videoUrl: string;
+  posterUrl?: string;
+  videoSources?: {
+    src: string;
+    type: "video/mp4" | "video/webm";
+  }[];
   skills: string[];
 }
