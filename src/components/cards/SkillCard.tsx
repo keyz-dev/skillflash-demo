@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CategoryCard } from "@/lib/types/category-card";
-import { SkillCardActions } from "./SkillCardActions";
+import { CardActions } from "./Card/CardActions";
 
 export function SkillCard({
   card,
@@ -39,7 +39,7 @@ export function SkillCard({
           <span className="absolute bottom-2 left-4 z-10 cursor-pointer rounded-full bg-neutral-black px-4 py-2 font-body text-p text-neutral-white shadow-card transition-colors duration-200 hover:bg-neutral-black/80">
             {categoryLabel}
           </span>
-          <SkillCardActions />
+          <CardActions groupClassName="md:group-hover/card:pointer-events-auto md:group-hover/card:translate-x-0 md:group-hover/card:opacity-100 md:group-focus-within/card:pointer-events-auto md:group-focus-within/card:translate-x-0 md:group-focus-within/card:opacity-100" />
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col px-4 pt-8">

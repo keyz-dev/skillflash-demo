@@ -25,6 +25,17 @@
   --text-h1--line-height: 72px;
   --text-h1--font-weight: 700;
 
+  --text-h2: 48px;
+  --text-h2--line-height: 56px;
+
+  --text-h3: 36px;
+  --text-h3--line-height: 48px;
+  --text-h4: 32px;
+  --text-h4--line-height: 40px;
+
+  --text-h5: 28px;
+  --text-h5--line-height: 36px;
+
   --text-h6: 24px;
   --text-h6--line-height: 40px;
   --text-h6--font-weight: 700;

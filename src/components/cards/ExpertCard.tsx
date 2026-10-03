@@ -1,7 +1,7 @@
 import type { Expert } from "@/lib/types/expert";
 import type { Skill } from "@/lib/types/skill";
 import { Card } from "./Card/Card";
-import { CardFloatingActions } from "./Card/CardFloatingActions";
+import { CardActions } from "./Card/CardActions";
 import { CardLayoutA } from "./Card/CardLayoutA";
 
 function getSkillName(skillId: string, skills: Skill[]) {
@@ -17,7 +17,7 @@ export function ExpertCard({
 }) {
   return (
     <Card href={`/experts/${expert.slug}`}>
-      <CardFloatingActions />
+      <CardActions groupClassName="md:group-hover:pointer-events-auto md:group-hover:translate-x-0 md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:translate-x-0 md:group-focus-within:opacity-100" />
       <CardLayoutA
         entityType="expert"
         avatarUrl={expert.avatarUrl}

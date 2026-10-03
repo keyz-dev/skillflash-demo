@@ -7,7 +7,7 @@ import type { Skill } from "@/lib/types/skill";
 import { cn, entityAccentClasses } from "@/lib/utils";
 import { experts } from "@/lib/data/experts";
 import { Card } from "./Card/Card";
-import { CardFloatingActions } from "./Card/CardFloatingActions";
+import { CardActions } from "./Card/CardActions";
 
 function getSkillName(skillId: string, skills: Skill[]) {
   return skills.find((skill) => skill.id === skillId)?.name ?? skillId;
@@ -62,7 +62,7 @@ export function MediaCard({
 
   return (
     <Card>
-      <CardFloatingActions />
+      <CardActions groupClassName="md:group-hover:pointer-events-auto md:group-hover:translate-x-0 md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:translate-x-0 md:group-focus-within:opacity-100" />
       <div className="flex h-full flex-col">
         <div className="relative flex h-50 shrink-0 items-center justify-center bg-background pt-16">
           {hasVideoSources ? (

@@ -3,7 +3,7 @@ import type { Team } from "@/lib/types/team";
 import type { Skill } from "@/lib/types/skill";
 import { cn, entityAccentClasses } from "@/lib/utils";
 import { Card } from "./Card/Card";
-import { CardFloatingActions } from "./Card/CardFloatingActions";
+import { CardActions } from "./Card/CardActions";
 
 function getSkillName(skillId: string, skills: Skill[]) {
   return skills.find((skill) => skill.id === skillId)?.name ?? skillId;
@@ -15,7 +15,7 @@ export function TeamCard({ team, skills }: { team: Team; skills: Skill[] }) {
 
   return (
     <Card>
-      <CardFloatingActions />
+      <CardActions groupClassName="md:group-hover:pointer-events-auto md:group-hover:translate-x-0 md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:translate-x-0 md:group-focus-within:opacity-100" />
       <div className="flex h-full flex-col items-center px-4 pb-4 pt-12">
         <div className="relative mb-5 flex size-40 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
           <Image

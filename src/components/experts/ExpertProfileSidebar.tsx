@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Expert } from "@/lib/types";
-import { ExpertSocialIcon } from "@/components/ui/ExpertSocialIcon";
+import { SocialIcon } from "@/components/ui/icons";
+import { ExpertSaveButton } from "./ExpertSaveButton";
 
 type ExpertProfileSidebarProps = {
   expert: Expert;
@@ -8,7 +9,11 @@ type ExpertProfileSidebarProps = {
 
 export function ExpertProfileSidebar({ expert }: ExpertProfileSidebarProps) {
   return (
-    <aside className="h-fit rounded-card bg-background p-6 shadow-card">
+    <aside className="h-fit rounded-card bg-background p-6 shadow-card relative">
+      {/* Floating save icon */}
+      <ExpertSaveButton />
+
+      {/* Profile Image */}
       <div className="relative mx-auto mb-5 flex size-48 items-center justify-center overflow-hidden rounded-full border-4 border-white shadow-card">
         <Image
           src={expert.avatarUrl}
@@ -19,38 +24,51 @@ export function ExpertProfileSidebar({ expert }: ExpertProfileSidebarProps) {
         />
       </div>
 
-      <div className="text-center">
-        <h1 className="font-heading text-h4 text-gradient-primary">
+      <div className="text-left flex flex-col items-left gap-3">
+        <h1 className="font-heading text-[40px] font-bold text-gradient-fade">
           {expert.name}
         </h1>
-        <p className="mt-2 font-body text-body-lg font-bold text-foreground">
-          @{expert.handle}
+        <p className="font-body text-h6 font-bold text-foreground">
+          @{expert.handle}🚀
         </p>
-        <p className="mt-4 font-body text-p text-foreground/80">{expert.bio}</p>
+        <p className="font-body text-left text-p text-foreground/80 line-clamp-3">
+          {expert.bio}
+        </p>
 
-        <div className="mt-4 flex items-center justify-center gap-2 font-body text-p text-foreground/70">
+        <div className="mt-2 flex gap-1 font-body text-p text-foreground">
           <svg
-            width="16"
-            height="16"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
+            <path
+              d="M12 2C7.8 2 4 5.22 4 10.2C4 13.52 6.67 17.45 12 22C17.33 17.45 20 13.52 20 10.2C20 5.22 16.2 2 12 2ZM12 12C10.9 12 10 11.1 10 10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 11.1 13.1 12 12 12Z"
+              fill="#200E38"
+            />
           </svg>
-          <span>{expert.location}</span>
+
+          <span className="underline">{expert.location}</span>
         </div>
 
         <button
           type="button"
-          className="mt-6 w-full rounded-button bg-gradient-primary py-3 font-heading text-body-lg font-bold text-neutral-white shadow-button transition-transform hover:scale-[1.02]"
+          className="flex items-center justify-center gap-3 mt-6 w-full rounded-control bg-secondary-fade py-3 font-heading text-body-lg font-bold text-neutral-white shadow-button transition-transform hover:scale-[1.02] border-4"
         >
-          Frage stellen
+          <span>Frage stellen</span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 6H19V15H6V17C6 17.55 6.45 18 7 18H18L22 22V7C22 6.45 21.55 6 21 6ZM17 12V3C17 2.45 16.55 2 16 2H3C2.45 2 2 2.45 2 3V17L6 13H16C16.55 13 17 12.55 17 12Z"
+              fill="white"
+            />
+          </svg>
         </button>
 
         <div className="mt-6 flex items-center justify-center gap-3">
@@ -60,10 +78,10 @@ export function ExpertProfileSidebar({ expert }: ExpertProfileSidebarProps) {
               href={social.url}
               target="_blank"
               rel="noreferrer"
-              className="flex size-10 items-center justify-center rounded-full border-2 border-neutral-grey/30 bg-background transition-colors hover:border-primary-lila hover:text-primary-lila"
+              className="flex size-10 items-center justify-center rounded-full border-4 border-white shadow-card bg-background transition-colors hover:border-primary-pink/70"
               aria-label={social.platform}
             >
-              <ExpertSocialIcon platform={social.platform} />
+              <SocialIcon platform={social.platform} />
             </a>
           ))}
         </div>

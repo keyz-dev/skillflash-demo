@@ -25,11 +25,11 @@ export function ExpertProfileTabs({
   const isAbout = activeTab === "about";
 
   return (
-    <div>
+    <div className="overflow-hidden rounded-card shadow-card">
       <div
         role="tablist"
         aria-label="Expert:innen Profil"
-        className="mb-6 inline-flex rounded-t-lg bg-background shadow-[0_-2px_10px_rgba(0,0,0,0.05)]"
+        className="flex min-h-[94px] items-end gap-4 bg-[linear-gradient(90deg,#ffbe0b_0%,#ff006e_50%,#8338ec_100%)] px-5 pt-4 sm:px-10"
       >
         <TabButton
           role="tab"
@@ -51,7 +51,7 @@ export function ExpertProfileTabs({
         role="tabpanel"
         aria-hidden={!isAbout}
         className={cn(
-          "rounded-b-card rounded-tr-card bg-background p-6 shadow-card",
+          "bg-background p-6 sm:p-8",
           !isAbout && "hidden",
         )}
       >
@@ -62,7 +62,7 @@ export function ExpertProfileTabs({
         role="tabpanel"
         aria-hidden={isAbout}
         className={cn(
-          "rounded-b-card rounded-tr-card bg-background p-6 shadow-card",
+          "bg-background p-6 sm:p-8",
           isAbout && "hidden",
         )}
       >
@@ -92,10 +92,10 @@ function TabButton({
       aria-selected={ariaSelected}
       onClick={onClick}
       className={cn(
-        "rounded-t-lg border-b-4 px-8 py-4 font-heading text-h5 transition-colors",
+        "min-h-[72px] rounded-t-lg px-5 py-3 font-heading text-h5 font-bold transition-colors",
         active
-          ? "border-b-primary-lila text-neutral-white bg-gradient-primary"
-          : "border-transparent text-gradient-primary",
+          ? "bg-background text-gradient-fade"
+          : "text-neutral-white",
       )}
     >
       {label}

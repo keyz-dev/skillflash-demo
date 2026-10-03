@@ -1,7 +1,7 @@
 import type { Article } from "@/lib/types/article";
 import type { Skill } from "@/lib/types/skill";
 import { Card } from "./Card/Card";
-import { CardFloatingActions } from "./Card/CardFloatingActions";
+import { CardActions } from "./Card/CardActions";
 import { CardLayoutB } from "./Card/CardLayoutB";
 
 function getSkillName(skillId: string, skills: Skill[]) {
@@ -17,7 +17,7 @@ export function ArticleCard({
 }) {
   return (
     <Card>
-      <CardFloatingActions />
+      <CardActions groupClassName="md:group-hover:pointer-events-auto md:group-hover:translate-x-0 md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:translate-x-0 md:group-focus-within:opacity-100" />
       <CardLayoutB
         variant="article"
         entityType="article"

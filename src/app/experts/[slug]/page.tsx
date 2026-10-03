@@ -7,11 +7,13 @@ import { DetailHeroBackground } from "@/components/layout/Hero/DetailHeroBackgro
 import {
   ExpertAboutTab,
   ExpertEventsTab,
+  ExpertPageHeroControls,
+  ExpertPageHeroObserver,
   ExpertProfileSidebar,
   ExpertProfileTabs,
- } from "@/components/experts";
+} from "@/components/experts";
 
-type ExpertPageProps = { params: Promise <{slug: string}>};
+type ExpertPageProps = { params: Promise<{ slug: string }> };
 
 // Find the expert by slug
 function findExpert(slug: string) {
@@ -21,7 +23,7 @@ function findExpert(slug: string) {
 // Generate metadata for the expert page for the title and description
 export async function generateMetadata({
   params,
-}: ExpertPageProps ): Promise<Metadata> {
+}: ExpertPageProps): Promise<Metadata> {
   const { slug } = await params;
   const expert = findExpert(slug);
   if (!expert) {
@@ -33,7 +35,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ExpertPage({ params }: ExpertPageProps ) {
+export default async function ExpertPage({ params }: ExpertPageProps) {
   const { slug } = await params;
   const expert = findExpert(slug);
 
@@ -45,7 +47,9 @@ export default async function ExpertPage({ params }: ExpertPageProps ) {
 
   return (
     <main className="bg-background text-foreground">
-      <section className="relative min-h-[20rem]">
+      <section className="relative h-[15.5rem]">
+        <ExpertPageHeroObserver />
+        <ExpertPageHeroControls />
         <DetailHeroBackground variant="expert" />
       </section>
 

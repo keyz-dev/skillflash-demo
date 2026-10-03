@@ -7,7 +7,7 @@ export interface Expert {
   location: string;
   skills: string[];
   socials: {
-    platform: "linkedin" | "instagram" | "youtube" | "github";
+    platform: "linkedin" | "instagram" | "youtube" | "github" | "facebook";
     url: string;
   }[];
   yearsExperience: number;
