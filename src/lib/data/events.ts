@@ -3,6 +3,7 @@ import type { Event } from "@/lib/types";
 export const events: Event[] = [
   {
     id: 1,
+    slug: "speaking-about-transformation",
     authorId: "lena-hoffmann",
     name: "Speaking about Transformation",
     startDate: "2026-10-14",
@@ -23,6 +24,7 @@ export const events: Event[] = [
   },
   {
     id: 2,
+    slug: "agile-coaching-lab",
     authorId: "jonas-weber",
     name: "Agile Coaching Lab",
     startDate: "2026-11-05",
@@ -43,6 +45,7 @@ export const events: Event[] = [
   },
   {
     id: 3,
+    slug: "design-thinking-intensive",
     authorId: "mira-khalil",
     name: "Design Thinking Intensive",
     startDate: "2026-11-21",
@@ -63,6 +66,7 @@ export const events: Event[] = [
   },
   {
     id: 4,
+    slug: "ux-systems-day",
     authorId: "tobias-brandt",
     name: "UX Systems Day",
     startDate: "2026-12-03",

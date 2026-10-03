@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import type { SelectedSkillState, Skill } from "@/lib/types/skill";
 import { useHeaderScroll } from "@/components/layout/HeaderScrollContext";
@@ -11,6 +12,26 @@ import { ClosePillIcon } from "@/components/ui/ClosedPillIcon";
 
 function getSkillNameById(skills: Skill[], id: string | null): string {
   return skills.find((skill) => skill.id === id)?.name ?? "";
+}
+
+function getSelectedSkillPath(
+  skills: Skill[],
+  state: SelectedSkillState,
+): Skill[] {
+  const path: Skill[] = [];
+  if (state.categoryId) {
+    const cat = skills.find((s) => s.id === state.categoryId);
+    if (cat) path.push(cat);
+  }
+  if (state.hauptskillId) {
+    const h = skills.find((s) => s.id === state.hauptskillId);
+    if (h) path.push(h);
+  }
+  if (state.subskillId) {
+    const s = skills.find((s) => s.id === state.subskillId);
+    if (s) path.push(s);
+  }
+  return path;
 }
 
 export function SearchHero({
@@ -27,6 +48,7 @@ export function SearchHero({
   onRemoveSkill: (level: keyof SelectedSkillState) => void;
 }) {
   const router = useRouter();
+  const t = useTranslations("search");
   const { setScrolled, headerHeight } = useHeaderScroll();
   const sentinelRef = useRef<HTMLDivElement>(null);
 
@@ -46,6 +68,19 @@ export function SearchHero({
     observer.observe(sentinel);
     return () => observer.disconnect();
   }, [setScrolled]);
+
+  const selectedPath = useMemo(
+    () => getSelectedSkillPath(skills, selectedState),
+    [skills, selectedState],
+  );
+
+  useEffect(() => {
+    const heading = t("heading");
+    const breadcrumb = selectedPath.map((s) => s.name).join(" · ");
+    document.title = breadcrumb
+      ? `${breadcrumb} | ${heading} | Skillflash`
+      : `${heading} | Skillflash`;
+  }, [selectedPath, t]);
 
   const categoryPill = selectedState.categoryId
     ? {
@@ -119,6 +154,31 @@ export function SearchHero({
         </button>
 
         <div className="flex min-h-30 flex-col items-center justify-center gap-4">
+          <h1 className="text-center font-heading text-3xl leading-tight text-neutral-white md:text-h1">
+            {selectedPath.length === 0 ? (
+              t("heading")
+            ) : (
+              <span>
+                {selectedPath.map((skill, idx) => (
+                  <span key={skill.id}>
+                    {idx > 0 && (
+                      <span className="mx-2 text-neutral-white/60">/</span>
+                    )}
+                    <span
+                      className={cn(
+                        idx === selectedPath.length - 1
+                          ? "text-neutral-white"
+                          : "text-neutral-white/80",
+                      )}
+                    >
+                      {skill.name}
+                    </span>
+                  </span>
+                ))}
+              </span>
+            )}
+          </h1>
+
           {categoryPill ? (
             <div className="flex flex-wrap items-center justify-center gap-3">
               <button

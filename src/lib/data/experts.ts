@@ -3,6 +3,7 @@ import type { Expert } from "@/lib/types";
 export const experts: Expert[] = [
   {
     id: "lena-hoffmann",
+    slug: "lena-hoffmann",
     name: "Lena Hoffmann",
     handle: "lena.hoffmann",
     bio: "Begleitet Organisationen dabei, komplexe Vorhaben klar zu strukturieren und Teams in unsicheren Phasen handlungsfähig zu halten.",
@@ -20,6 +21,7 @@ export const experts: Expert[] = [
   },
   {
     id: "jonas-weber",
+    slug: "jonas-weber",
     name: "Jonas Weber",
     handle: "jonasweber",
     bio: "Agile Coach mit Fokus auf Produktteams, die Delivery und Lernschleifen besser zusammenbringen wollen.",
@@ -35,6 +37,7 @@ export const experts: Expert[] = [
   },
   {
     id: "mira-khalil",
+    slug: "mira-khalil",
     name: "Mira Khalil",
     handle: "mira.khalil",
     bio: "Facilitatorin für Design Thinking und nutzerzentrierte Produktentwicklung in interdisziplinären Teams.",
@@ -49,6 +52,7 @@ export const experts: Expert[] = [
   },
   {
     id: "tobias-brandt",
+    slug: "tobias-brandt",
     name: "Tobias Brandt",
     handle: "tobiasbrandt",
     bio: "Product Designer, der Schnittstellen zwischen Strategie, UX und Umsetzung in digitalen Plattformen gestaltet.",

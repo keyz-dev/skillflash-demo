@@ -1,5 +1,6 @@
 export interface Expert {
   id: string;
+  slug: string;
   name: string;
   handle: string;
   bio: string;

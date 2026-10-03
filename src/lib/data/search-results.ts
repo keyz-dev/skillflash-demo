@@ -7,6 +7,7 @@ export const searchResults: ResultItem[] = [
     type: "expert",
     data: {
       id: "lena-hoffmann",
+      slug: "lena-hoffmann",
       name: "Lena Hoffmann",
       handle: "lena.hoffmann",
       bio: "Begleitet Organisationen dabei, komplexe Vorhaben klar zu strukturieren und Teams in unsicheren Phasen handlungsfähig zu halten.",
@@ -30,6 +31,7 @@ export const searchResults: ResultItem[] = [
     type: "expert",
     data: {
       id: "jonas-weber",
+      slug: "jonas-weber",
       name: "Jonas Weber",
       handle: "jonasweber",
       bio: "Agile Coach mit Fokus auf Produktteams, die Delivery und Lernschleifen besser zusammenbringen wollen.",
@@ -57,6 +59,7 @@ export const searchResults: ResultItem[] = [
     type: "expert",
     data: {
       id: "mira-khalil",
+      slug: "mira-khalil",
       name: "Mira Khalil",
       handle: "mira.khalil",
       bio: "Facilitatorin für Design Thinking und nutzerzentrierte Produktentwicklung in interdisziplinären Teams.",
@@ -80,6 +83,7 @@ export const searchResults: ResultItem[] = [
     type: "event",
     data: {
       id: 1,
+      slug: "speaking-about-transformation",
       authorId: "lena-hoffmann",
       name: "Speaking about Transformation",
       startDate: "2026-10-14",
@@ -103,6 +107,7 @@ export const searchResults: ResultItem[] = [
     type: "event",
     data: {
       id: 2,
+      slug: "agile-coaching-lab",
       authorId: "jonas-weber",
       name: "Agile Coaching Lab",
       startDate: "2026-11-05",
@@ -126,6 +131,7 @@ export const searchResults: ResultItem[] = [
     type: "event",
     data: {
       id: 3,
+      slug: "design-thinking-intensive",
       authorId: "mira-khalil",
       name: "Design Thinking Intensive",
       startDate: "2026-11-21",

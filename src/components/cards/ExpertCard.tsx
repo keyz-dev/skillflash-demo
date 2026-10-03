@@ -16,7 +16,7 @@ export function ExpertCard({
   skills: Skill[];
 }) {
   return (
-    <Card>
+    <Card href={`/experts/${expert.slug}`}>
       <CardFloatingActions />
       <CardLayoutA
         entityType="expert"

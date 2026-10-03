@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="skillflash-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFB800" />
+      <stop offset="50%"  stop-color="#FF1493" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="url(#skillflash-gradient)" />
+
+  <path
+    d="M36 10 L20 36 H30 L26 54 L44 28 H34 Z"
+    fill="#FFFFFF"
+    stroke="rgba(0,0,0,0.08)"
+    stroke-width="0.5"
+  />
+</svg>

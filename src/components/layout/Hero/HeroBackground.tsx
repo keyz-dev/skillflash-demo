@@ -17,6 +17,7 @@ export function HeroBackground({ translateY = 10 }: { translateY?: number }) {
           alt=""
           fill
           sizes="100vw"
+          loading="eager"
           fetchPriority="high"
           className="object-cover object-center md:object-fill md:object-top md:-translate-y-9"
         />

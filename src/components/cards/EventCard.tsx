@@ -21,7 +21,7 @@ export function EventCard({
   });
 
   return (
-    <Card>
+    <Card href={`/events/${event.slug}`}>
       <CardFloatingActions />
       <CardLayoutB
         variant="event"
