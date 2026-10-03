@@ -4,25 +4,24 @@ import { SearchPage as SearchPageComponent } from "@/components/search/SearchPag
 import { skills } from "@/lib/data/skills";
 
 type SearchPageParams = {
-  searchParams?: {
-    category?: string;
-    hauptskill?: string;
-    subskill?: string;
-    skill?: string;
-  };
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-function getSelectedSkillNames({
-  category,
-  hauptskill,
-  subskill,
-  skill,
-}: {
-  category?: string;
-  hauptskill?: string;
-  subskill?: string;
-  skill?: string;
-}): string[] {
+function getSelectedSkillNames(
+  searchParams: Record<string, string | string[] | undefined>,
+): string[] {
+  const category = Array.isArray(searchParams.category)
+    ? searchParams.category[0]
+    : searchParams.category;
+  const hauptskill = Array.isArray(searchParams.hauptskill)
+    ? searchParams.hauptskill[0]
+    : searchParams.hauptskill;
+  const subskill = Array.isArray(searchParams.subskill)
+    ? searchParams.subskill[0]
+    : searchParams.subskill;
+  const skill = Array.isArray(searchParams.skill)
+    ? searchParams.skill[0]
+    : searchParams.skill;
   const names: string[] = [];
 
   if (skill) {
@@ -65,12 +64,7 @@ export async function generateMetadata({
 }: SearchPageParams): Promise<Metadata> {
   const t = await getTranslations("search");
   const baseTitle = `${t("heading")} | Skillflash`;
-
-  if (!searchParams) {
-    return { title: baseTitle, description: t("placeholder") };
-  }
-
-  const names = getSelectedSkillNames(searchParams);
+  const names = getSelectedSkillNames(await searchParams);
   if (names.length === 0) {
     return { title: baseTitle, description: t("placeholder") };
   }

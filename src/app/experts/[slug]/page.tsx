@@ -53,7 +53,7 @@ export default async function ExpertPage({ params }: ExpertPageProps) {
         <DetailHeroBackground variant="expert" />
       </section>
 
-      <section className="relative z-10 mx-auto -mt-20 w-full max-w-7xl px-4 pb-24 md:px-8">
+      <section className="relative z-10 mx-auto -mt-15 w-full max-w-7xl px-4 pb-24 md:px-8">
         <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
           <ExpertProfileSidebar expert={expert} />
 

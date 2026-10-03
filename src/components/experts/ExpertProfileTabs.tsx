@@ -25,11 +25,11 @@ export function ExpertProfileTabs({
   const isAbout = activeTab === "about";
 
   return (
-    <div className="overflow-hidden rounded-card shadow-card">
+    <div className="overflow-hidden">
       <div
         role="tablist"
         aria-label="Expert:innen Profil"
-        className="flex min-h-[94px] items-end gap-4 bg-[linear-gradient(90deg,#ffbe0b_0%,#ff006e_50%,#8338ec_100%)] px-5 pt-4 sm:px-10"
+        className="flex gap-2 sm:gap-0 min-h-20 items-start"
       >
         <TabButton
           role="tab"
@@ -38,6 +38,7 @@ export function ExpertProfileTabs({
           active={isAbout}
           onClick={() => setActiveTab("about")}
         />
+
         <TabButton
           role="tab"
           aria-selected={!isAbout}
@@ -50,10 +51,7 @@ export function ExpertProfileTabs({
       <div
         role="tabpanel"
         aria-hidden={!isAbout}
-        className={cn(
-          "bg-background p-6 sm:p-8",
-          !isAbout && "hidden",
-        )}
+        className={cn("bg-background", !isAbout && "hidden")}
       >
         {aboutContent}
       </div>
@@ -61,10 +59,7 @@ export function ExpertProfileTabs({
       <div
         role="tabpanel"
         aria-hidden={isAbout}
-        className={cn(
-          "bg-background p-6 sm:p-8",
-          isAbout && "hidden",
-        )}
+        className={cn("bg-background", isAbout && "hidden")}
       >
         {eventsContent}
       </div>
@@ -85,20 +80,26 @@ function TabButton({
   role: string;
   "aria-selected": boolean;
 }) {
+  console.log("label: ", label);
+  console.log("active?? : ", active);
   return (
-    <button
-      type="button"
-      role={role}
-      aria-selected={ariaSelected}
-      onClick={onClick}
-      className={cn(
-        "min-h-[72px] rounded-t-lg px-5 py-3 font-heading text-h5 font-bold transition-colors",
-        active
-          ? "bg-background text-gradient-fade"
-          : "text-neutral-white",
-      )}
+    <div
+      className={`rounded-t-control ${active ? "bg-white border-b-2 border-primary-orange sm:border-0" : ""}`}
     >
-      {label}
-    </button>
+      <button
+        type="button"
+        role={role}
+        aria-selected={ariaSelected}
+        onClick={onClick}
+        className={cn(
+          "min-h-full p-2 sm:px-4 font-heading text-body-lg md:text-[32px] font-bold transition-colors",
+          active
+            ? "text-gradient-fade bg-white"
+            : "text-foreground sm:text-neutral-white",
+        )}
+      >
+        {label}
+      </button>
+    </div>
   );
 }
