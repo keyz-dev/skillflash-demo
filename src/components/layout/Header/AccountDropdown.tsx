@@ -13,6 +13,8 @@ import {
 import { cn } from "@/lib/utils";
 import { useHeaderScroll } from "@/components/layout/HeaderScrollContext";
 import { FontAwesomeGradientIcon } from "@/components/ui/FontAwesomeGradientIcon";
+import { LanguageSwitcher } from "./preferences/LanguageSwitcher";
+import { ThemeToggle } from "./preferences/ThemeToggle";
 
 export function AccountDropdown() {
   const t = useTranslations("account");
@@ -145,6 +147,17 @@ export function AccountDropdown() {
         >
           {t("help")}
         </Link>
+
+        <div className="my-3 h-px bg-primary-orange md:hidden" />
+        <div className="md:hidden">
+          <p className="mb-2 px-2 font-body text-sm font-semibold text-muted">
+            {t("preferences")}
+          </p>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher isScrolled />
+            <ThemeToggle isScrolled />
+          </div>
+        </div>
       </div>
     </div>
   );
