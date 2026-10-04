@@ -90,5 +90,87 @@
       "switchText": "Sharing your expertise?",
       "switchLabel": "Explore expert opportunities"
     }
+  },
+  "enterpriseLanding": {
+    "hero": {
+      "headline": "Make the most of your community’s skills",
+      "brandLine": "with Skillflash Enterprise",
+      "description": "A platform for online and in-person formats with your own branding. We make learning more accessible, connect regions, and support everyone’s development."
+    },
+    "profile": {
+      "title": "Meet Paul...",
+      "description": "...he lives in Hildesheim and is looking for the right project management expert nearby.",
+      "skillsLabel": "Skills he needs:",
+      "skills": {
+        "projectManagement": "Project management",
+        "classic": "Traditional",
+        "agile": "Agile"
+      },
+      "location": "Hildesheim",
+      "portraitAlt": "Portrait of Paul"
+    },
+    "search": {
+      "title": "Paul searches...",
+      "description": "...our platform for the skills he needs and finds the right expert.",
+      "phoneAlt": "Skillflash on a smartphone showing experts, events, and skills",
+      "expertName": "Antonia Sensen",
+      "expertPortraitAlt": "Portrait of Antonia Sensen",
+      "expertYears": "6 years",
+      "expertExperience": "of experience",
+      "expertLocation": "Hildesheim",
+      "hybridSkill": "Hybrid"
+    },
+    "dashboard": {
+      "title": "Antonia uses the dashboard...",
+      "description": "...to create formats such as events, and to manage bookings and market her offerings.",
+      "dashboardAlt": "Skillflash Enterprise dashboard showing Antonia’s events",
+      "demoButton": "Book a demo",
+      "demoUnavailable": "Demo booking is not available yet."
+    },
+    "features": {
+      "title": "Features",
+      "description": "Our enterprise solution gives organizations the tools to develop their community,\ngrow revenue, and encourage knowledge-sharing through events.",
+      "phoneAlt": "Skillflash showing configured project management skills on a smartphone",
+      "items": {
+        "marketplace": "Marketplace for diverse formats",
+        "eventManagement": "Event creation and management",
+        "ticketManagement": "Ticket booking and management",
+        "publicProfiles": "Public member profiles",
+        "memberManagement": "Member management",
+        "rolesAndPermissions": "Roles and permissions",
+        "linkedinIntegration": "LinkedIn integration",
+        "blogOrMagazine": "Blog or magazine"
+      }
+    },
+    "closing": {
+      "teamTitle": "Our team...",
+      "members": {
+        "oscar": {
+          "name": "Oscar Schröder",
+          "role": "Sales & Finance",
+          "portraitAlt": "Portrait of Oscar Schröder"
+        },
+        "leonardo": {
+          "name": "Leonardo Bornhäuser",
+          "role": "Product Design",
+          "portraitAlt": "Portrait of Leonardo Bornhäuser"
+        },
+        "tobias": {
+          "name": "Tobias Braun",
+          "role": "IT & Security",
+          "portraitAlt": "Portrait of Tobias Braun"
+        },
+        "antonia": {
+          "name": "Antonia Sensen",
+          "role": "Media & Network",
+          "portraitAlt": "Portrait of Antonia Sensen"
+        }
+      },
+      "feedbackTitle": "...have a question?",
+      "feedbackDescription": "Your opinion matters to us. We’d love to know what you think of our plans.",
+      "positiveFeedback": "I like it",
+      "negativeFeedback": "I don't like it",
+      "emailLabel": "For follow-up questions"
+    }
   }
 }

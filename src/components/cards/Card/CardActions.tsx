@@ -15,7 +15,13 @@ import { BookmarkIcon } from "@/components/ui/icons";
 const actionButtonBaseClass =
   "flex size-9 cursor-pointer items-center justify-center rounded-full shadow-card transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue";
 
-export function CardActions({ groupClassName }: { groupClassName?: string }) {
+export function CardActions({
+  groupClassName,
+  buttonClassName,
+}: {
+  groupClassName?: string;
+  buttonClassName?: string;
+}) {
   const t = useTranslations("categories.actions");
   const [selected, setSelected] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -53,7 +59,7 @@ export function CardActions({ groupClassName }: { groupClassName?: string }) {
         type="button"
         aria-label={selected ? t("remove") : t("add")}
         aria-pressed={selected}
-        className={cn(actionButtonBaseClass, "bg-neutral-white")}
+        className={cn(actionButtonBaseClass, "bg-neutral-white", buttonClassName)}
         onClick={(event) => handleActionClick(event, "select")}
       >
         <span
@@ -89,6 +95,7 @@ export function CardActions({ groupClassName }: { groupClassName?: string }) {
         className={cn(
           actionButtonBaseClass,
           "bg-neutral-white text-primary-lila",
+          buttonClassName,
         )}
         onClick={(event) => handleActionClick(event, "share")}
       >
@@ -103,7 +110,7 @@ export function CardActions({ groupClassName }: { groupClassName?: string }) {
         type="button"
         aria-label={saved ? t("unsave") : t("save")}
         aria-pressed={saved}
-        className={cn(actionButtonBaseClass, "bg-neutral-white ")}
+        className={cn(actionButtonBaseClass, "bg-neutral-white", buttonClassName)}
         onClick={(event) => handleActionClick(event, "save")}
       >
         {saved ? (

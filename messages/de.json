@@ -90,5 +90,87 @@
       "switchText": "Möchtest du dein Wissen teilen?",
       "switchLabel": "Für Expert:innen"
     }
+  },
+  "enterpriseLanding": {
+    "hero": {
+      "headline": "Mach das Beste aus den Skills Deiner Community",
+      "brandLine": "mit Skillflash Enterprise",
+      "description": "Eine Plattform mit Online- und Offline-Formaten in individuellem Branding. Dadurch machen wir Bildungsformate erreichbarer, vernetzen Regionen und fördern die Entwicklung jedes Einzelnen."
+    },
+    "profile": {
+      "title": "Das ist Paul..",
+      "description": "..er wohnt in Hildesheim und sucht den oder die Richtige für sein Projektmanagement vor Ort.",
+      "skillsLabel": "Gesuchte Skills:",
+      "skills": {
+        "projectManagement": "Projektmanagement",
+        "classic": "Klassisch",
+        "agile": "Agil"
+      },
+      "location": "Hildesheim",
+      "portraitAlt": "Porträt von Paul"
+    },
+    "search": {
+      "title": "Paul sucht..",
+      "description": "..auf unserer Plattform nach den gewünschten Skills und findet die passende Expertin.",
+      "phoneAlt": "Skillflash auf einem Smartphone mit Expert:innen, Events und Skills",
+      "expertName": "Antonia Sensen",
+      "expertPortraitAlt": "Porträt von Antonia Sensen",
+      "expertYears": "6 Jahre",
+      "expertExperience": "Berufserfahrung",
+      "expertLocation": "Hildesheim",
+      "hybridSkill": "Hybrid"
+    },
+    "dashboard": {
+      "title": "Antonia nutzt das Dashboard..",
+      "description": "..einerseits zum Erstellen von Formaten, wie zum Beispiel Events und\nandererseits zum Verwalten von Buchungen oder fürs Marketing ihrer Angebote.",
+      "dashboardAlt": "Skillflash Enterprise Dashboard mit Antonia Sensens Events",
+      "demoButton": "Demo vereinbaren",
+      "demoUnavailable": "Die Demo-Buchung ist noch nicht verfügbar."
+    },
+    "features": {
+      "title": "Funktionen",
+      "description": "Unsere Enterprise-Lösung ermöglicht Organisationen folgenden Funktionsumfang,\num damit die eigene Community weiterzubilden, Umsätze zu steigern\nund durch Events den (Wissens-)Austausch zu fördern.",
+      "phoneAlt": "Skillflash mit konfigurierten Projektmanagement-Skills auf einem Smartphone",
+      "items": {
+        "marketplace": "Marktplatz für diverse Formate",
+        "eventManagement": "Eventerstellung und -verwaltung",
+        "ticketManagement": "Ticketbuchungen und -verwaltung",
+        "publicProfiles": "Öffentliche Mitglieder-Profile",
+        "memberManagement": "Mitgliederverwaltung",
+        "rolesAndPermissions": "Rollen- und Rechtesystem",
+        "linkedinIntegration": "LinkedIn-Verknüpfung",
+        "blogOrMagazine": "Blog oder Magazin"
+      }
+    },
+    "closing": {
+      "teamTitle": "Unser Team..",
+      "members": {
+        "oscar": {
+          "name": "Oscar Schröder",
+          "role": "Sales & Finanzen",
+          "portraitAlt": "Porträt von Oscar Schröder"
+        },
+        "leonardo": {
+          "name": "Leonardo Bornhäuser",
+          "role": "Produkt Design",
+          "portraitAlt": "Porträt von Leonardo Bornhäuser"
+        },
+        "tobias": {
+          "name": "Tobias Braun",
+          "role": "IT & Sicherheit",
+          "portraitAlt": "Porträt von Tobias Braun"
+        },
+        "antonia": {
+          "name": "Antonia Sensen",
+          "role": "Media & Netzwerk",
+          "portraitAlt": "Porträt von Antonia Sensen"
+        }
+      },
+      "feedbackTitle": "..hat noch eine Frage:",
+      "feedbackDescription": "Wir legen großen Wert auf Deine Meinung und möchten gerne wissen, wie Du unser Vorhaben findest?",
+      "positiveFeedback": "Gefällt mir",
+      "negativeFeedback": "Gefällt mir nicht",
+      "emailLabel": "Für Rückfragen"
+    }
   }
 }
