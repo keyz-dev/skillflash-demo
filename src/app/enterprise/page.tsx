@@ -26,13 +26,13 @@ export default async function EnterprisePage() {
         <ExpertPageHeroObserver />
         <HeroBackground />
         <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-20 text-center text-neutral-white md:px-8 md:pt-35">
-          <h1 className="font-heading text-3xl leading-tight sm:text-4xl md:text-h2">
+          <h1 className="font-heading text-xl leading-tight sm:text-4xl md:text-h2">
             {t("headline")}
           </h1>
           <h1 className="font-heading text-3xl leading-tight sm:text-4xl md:text-h1">
             {t("brandLine")}
           </h1>
-          <p className="mt-4 max-w-2xl font-body text-base leading-snug sm:text-lg md:text-body-lg">
+          <p className="mt-4 max-w-2xl font-body text-[12px] leading-snug sm:text-lg md:text-body-lg">
             {t("description")}
           </p>
         </div>

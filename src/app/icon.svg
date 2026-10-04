@@ -1,18 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="skillflash-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#FFB800" />
-      <stop offset="50%"  stop-color="#FF1493" />
-      <stop offset="100%" stop-color="#7C3AED" />
-    </linearGradient>
-  </defs>
-
-  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="url(#skillflash-gradient)" />
-
-  <path
-    d="M36 10 L20 36 H30 L26 54 L44 28 H34 Z"
-    fill="#FFFFFF"
-    stroke="rgba(0,0,0,0.08)"
-    stroke-width="0.5"
-  />
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" rx="6" fill="url(#paint0_linear_1821_17439)"/>
+<path d="M46.6509 80.0005H43.3176L46.6509 56.6672H34.9843C32.0509 56.6672 33.8843 54.1672 33.9509 54.0672C38.2509 46.4672 44.7176 35.1338 53.3509 20.0005H56.6843L53.3509 43.3338H65.0509C66.3843 43.3338 67.1176 43.9672 66.3843 45.5338C53.2176 68.5005 46.6509 80.0005 46.6509 80.0005Z" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_1821_17439" x1="-35.5" y1="73" x2="162.134" y2="-61.8618" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF006E"/>
+<stop offset="0.0001" stop-color="#FF006E"/>
+<stop offset="0.0885417" stop-color="#FF006E"/>
+<stop offset="0.536458" stop-color="#FB5607"/>
+<stop offset="1" stop-color="#FB5607"/>
+</linearGradient>
+</defs>
 </svg>
