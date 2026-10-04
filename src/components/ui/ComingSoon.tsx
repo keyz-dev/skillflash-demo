@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import { ExpertPageHeroObserver } from "@/components/experts/ExpertPageHeroObserver";
+import { HeroBackground } from "@/components/layout/Hero/HeroBackground";
 
 type ComingSoonAudience = "experts" | "enterprise";
 
@@ -22,17 +24,12 @@ export async function ComingSoon({
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between border-b border-border px-4 py-5 md:px-8">
-        <Link
-          href="/"
-          className="font-heading text-xl font-bold text-primary-lila"
-        >
-          Skillflash
-        </Link>
-        <p className="font-body text-p text-muted">{audienceT("eyebrow")}</p>
-      </header>
+      <section className="relative h-[15.5rem] md:h-[18rem]">
+        <ExpertPageHeroObserver />
+        <HeroBackground />
+      </section>
 
-      <section className="mx-auto grid min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] md:px-8 md:py-16">
+      <section className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] md:px-8 md:py-16">
         <div className="max-w-2xl">
           <p className="inline-flex items-center gap-2 font-body text-p text-primary-orange">
             <span

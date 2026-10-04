@@ -11,9 +11,11 @@ export interface Event {
     | { type: "offline"; address: string }
     | { type: "online"; link: string };
   mainSkillIds: string[];
+  shortDescription: string;
   description: string;
   ticketPrice: number;
   minGuests: number;
   maxGuests: number;
   previewImage: string;
+  detailImage: string;
 }

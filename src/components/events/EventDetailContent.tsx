@@ -43,6 +43,15 @@ export function EventDetailContent({
       <div className="max-w-[760px] whitespace-pre-line font-body text-base leading-7 text-foreground/90">
         {event.description}
       </div>
+      <div className="relative mt-8 aspect-video max-w-[760px] overflow-hidden rounded-card">
+        <Image
+          src={event.detailImage}
+          alt={event.name}
+          fill
+          sizes="(max-width: 1023px) 100vw, 760px"
+          className="object-cover"
+        />
+      </div>
     </article>
   );
 }

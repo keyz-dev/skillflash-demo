@@ -1,5 +1,6 @@
 import type { ResultItem } from "@/lib/types";
 import { articles } from "./articles";
+import { events } from "./events";
 import { media } from "./media";
 
 export const searchResults: ResultItem[] = [
@@ -79,78 +80,10 @@ export const searchResults: ResultItem[] = [
       avatarUrl: "https://picsum.photos/seed/mira-khalil/400/400",
     },
   },
-  {
-    type: "event",
-    data: {
-      id: 1,
-      slug: "speaking-about-transformation",
-      authorId: "lena-hoffmann",
-      name: "Speaking about Transformation",
-      startDate: "2026-10-14",
-      endDate: "2026-10-14",
-      startTime: "09:00",
-      endTime: "17:00",
-      location: {
-        type: "offline",
-        address: "Impact Hub Berlin, Rollbergstraße 28a, 12053 Berlin",
-      },
-      mainSkillIds: ["terminplanung"],
-      description:
-        "Ein Praxistag zu Steuerung, Stakeholder-Klarheit und Entscheidungen in Transformationsprogrammen.",
-      ticketPrice: 189,
-      minGuests: 12,
-      maxGuests: 40,
-      previewImage: "https://picsum.photos/seed/event-transformation/400/400",
-    },
-  },
-  {
-    type: "event",
-    data: {
-      id: 2,
-      slug: "agile-coaching-lab",
-      authorId: "jonas-weber",
-      name: "Agile Coaching Lab",
-      startDate: "2026-11-05",
-      endDate: "2026-11-06",
-      startTime: "10:00",
-      endTime: "16:00",
-      location: {
-        type: "online",
-        link: "https://meet.skillflash.de/agile-coaching-lab",
-      },
-      mainSkillIds: ["scrum"],
-      description:
-        "Zwei halbe Tage mit Live-Coaching, Fallarbeit und Ritualen für Product Owner und Scrum Master.",
-      ticketPrice: 149,
-      minGuests: 8,
-      maxGuests: 30,
-      previewImage: "https://picsum.photos/seed/event-agile-lab/400/400",
-    },
-  },
-  {
-    type: "event",
-    data: {
-      id: 3,
-      slug: "design-thinking-intensive",
-      authorId: "mira-khalil",
-      name: "Design Thinking Intensive",
-      startDate: "2026-11-21",
-      endDate: "2026-11-21",
-      startTime: "09:30",
-      endTime: "18:00",
-      location: {
-        type: "offline",
-        address: "Design Offices Hamburg, Domstraße 10, 20095 Hamburg",
-      },
-      mainSkillIds: ["user-interviews"],
-      description:
-        "Vom Problemraum zum getesteten Prototyp — ein kompakter Workshop für gemischte Produktteams.",
-      ticketPrice: 219,
-      minGuests: 10,
-      maxGuests: 24,
-      previewImage: "https://picsum.photos/seed/event-design-thinking/400/400",
-    },
-  },
+  ...events.slice(0, 3).map((event) => ({
+    type: "event" as const,
+    data: event,
+  })),
   ...articles.slice(0, 3).map((article) => ({
     type: "article" as const,
     data: article,

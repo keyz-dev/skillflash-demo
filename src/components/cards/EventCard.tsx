@@ -27,7 +27,7 @@ export function EventCard({
         variant="event"
         imageUrl={event.previewImage}
         title={event.name}
-        description={event.description}
+        description={event.shortDescription}
         skillTags={event.mainSkillIds
           .slice(0, 2)
           .map((skillId) => getSkillName(skillId, skills))}

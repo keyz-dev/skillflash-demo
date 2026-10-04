@@ -10,15 +10,15 @@ export function ExpertPageHeroControls() {
   const { headerHeight } = useHeaderScroll();
 
   return (
-    <div className="relative mx-auto max-w-7xl px-2 pb-2 pt-28 md:pt-40">
+    <div className="relative z-10 mx-auto max-w-7xl px-2 pb-2 pt-28 md:pt-40">
       <button
         type="button"
         aria-label="Back"
         onClick={() => router.back()}
-        style={{ top: headerHeight + 16 }}
-        className="absolute left-4 hidden h-9 w-9 cursor-pointer items-center justify-center rounded-full border-[3px] border-white/90 bg-transparent text-white shadow-card transition-transform hover:scale-[1.02] md:flex"
+        style={{ top: headerHeight + 2 }}
+        className="absolute left-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-[3px] border-white/90 bg-transparent font-bold text-white shadow-card transition-transform hover:scale-[1.02]"
       >
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <FontAwesomeIcon icon={faArrowLeft} className="text-lg" />
       </button>
     </div>
   );

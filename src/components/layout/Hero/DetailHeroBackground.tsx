@@ -8,7 +8,7 @@ type DetailHeroBackgroundProps = {
 
 const VARIANT_DESKTOP: Record<DetailHeroVariant, string> = {
   expert: "/assets/images/hero/Background-expert.png",
-  event: "/assets/images/hero/hero-vector.png",
+  event: "/assets/images/hero/Background-expert.png",
 };
 
 export function DetailHeroBackground({
@@ -17,7 +17,7 @@ export function DetailHeroBackground({
   const desktopSrc = VARIANT_DESKTOP[variant];
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
       <picture className="absolute inset-0">
         <source
           media="(max-width: 767px)"
