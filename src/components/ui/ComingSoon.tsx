@@ -24,7 +24,7 @@ export async function ComingSoon({
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <section className="relative h-[15.5rem] md:h-[18rem]">
+      <section className="relative h-[17rem] md:h-[20rem]">
         <ExpertPageHeroObserver />
         <HeroBackground />
       </section>
